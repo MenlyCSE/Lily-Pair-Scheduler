@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EonPair</title>
+
+    <link href="/css/normalize.css" rel="stylesheet" />
+    <link href="/css/styles.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <header>
+      <h1>Please fill out this form</h1>
+    </header>
+
+    <section>
+      <form action="POST">
+        <div>
+          <label for="name"></label>
+          <input name="name" placeholder="Enter your name" required />
+        </div>
+
+        <div>
+          <label for="email"></label>
+          <input name="email" placeholder="Enter your email" required />
+        </div>
+
+        <div>
+          <label for="weChatId"></label>
+          <input name="weChatId" placeholder="Enter your weChatID (optional)" />
+        </div>
+        <input type="submit" value="Submit" />
+      </form>
+    </section>
+
+    <script src="/js/formDataSubmit.js"></script>
+  </body>
+</html>
