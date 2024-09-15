@@ -10,8 +10,8 @@ html {
 }
 
 :root {
-  --color-text-primary: rgb(20, 20, 20);
-  --color-text-secondary: rgb(233, 233, 233);
+  --color-black: rgb(20, 20, 20);
+  --color-white: rgb(246, 246, 246);
   --color-blue: dodgerblue;
   --color-blue-light: rgb(43, 104, 156, 0.2);
   --color-blue-dark: rgb(43, 104, 156);
@@ -19,11 +19,11 @@ html {
 
 ::selection {
   background: var(--color-blue);
-  color: var(--color-text-secondary);
+  color: var(--color-white);
 }
 
 body {
-  color: var(--color-text-primary);
+  color: var(--color-black);
   font-family: Inter, Arial, Helvetica, sans-serif;
   font-size: 2.4rem;
   line-height: 1.5;
@@ -60,7 +60,7 @@ p {
 /* Hero section */
 .block {
   --block-padding-verticle: 3rem;
-  padding: var(--block-padding-verticle) 2rem;
+  padding: var(--block-padding-verticle) 3rem;
 }
 
 .block--background {
@@ -82,4 +82,9 @@ p {
 
 .block__input-container label {
     font-weight: 500;
+}
+
+.block--light {
+    background: var(--color-white);
+    border-radius: 2rem;
 }
