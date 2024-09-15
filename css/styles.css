@@ -11,14 +11,17 @@ html {
 
 :root {
   --color-black: rgb(20, 20, 20);
-  --color-white: rgb(246, 246, 246);
-  --color-blue-light: rgb(43, 104, 156, 0.2);
+  --color-black-light: rgb(88, 88, 88);
+  --color-blue-normal: rgb(43, 126, 210);
   --color-blue-dark: rgb(43, 104, 156);
+  --color-blue-light: rgb(43, 104, 156, 0.2);
+  --color-white: rgb(255, 255, 255);
+  --color-transparent-white: rgb(255, 255, 255, 0.8);
 }
 
 ::selection {
   background: var(--color-blue-dark);
-  color: var(--color-white);
+  color: var(--color-transparent-white);
 }
 
 body {
@@ -30,12 +33,12 @@ body {
 
 h1,
 h2 {
-  margin-bottom: 1rem;
   line-height: 1.1;
+  margin-bottom: 1rem;
 }
 
 h1 {
-  font-size: 7rem;
+  font-size: 5rem;
 }
 
 h2 {
@@ -52,7 +55,7 @@ p {
   }
 
   h1 {
-    font-size: 8rem;
+    font-size: 6rem;
   }
 }
 
@@ -60,6 +63,10 @@ p {
 .block {
   --block-padding-verticle: 3rem;
   padding: var(--block-padding-verticle) 3rem;
+}
+
+.block h1 {
+    color: var(--color-blue-dark);
 }
 
 .block--background {
@@ -71,19 +78,37 @@ p {
   padding: calc(var(--block-padding-verticle) + 4rem);
 }
 
-.block__input-container {
+.block__form-container {
     display: grid;
 }
 
-.block__input-container input {
+.block__form-container input {
+    background: none;
+    border-radius: 0.5rem;
+    border: var(--color-black-light) solid 1px;
     margin-bottom: 2rem;
+    padding: 0.75rem;
 }
 
-.block__input-container label {
+.block__form-container input:focus {
+    outline: var(--color-blue-normal) solid 2px;
+    box-shadow: 0 0 5px var(--color-blue-normal);
+}
+
+.block__form-container label {
+    color: var(--color-black-light);
     font-weight: 500;
 }
 
 .block--light {
-    background: var(--color-white);
-    border-radius: 2rem;
+    background: var(--color-transparent-white);
+    border-radius: 0.75rem;
+}
+
+.block .block__submit-btn {
+    background: var(--color-blue-normal);
+    border: none;
+    color: var(--color-white);
+    cursor: pointer;
+    font-weight: 600;
 }
