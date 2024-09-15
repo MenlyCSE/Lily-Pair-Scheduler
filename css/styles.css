@@ -1,0 +1,85 @@
+/* Typography */
+html {
+  font-size: 62.5%;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+:root {
+  --color-text-primary: rgb(20, 20, 20);
+  --color-text-secondary: rgb(233, 233, 233);
+  --color-blue: dodgerblue;
+  --color-blue-light: rgb(43, 104, 156, 0.2);
+  --color-blue-dark: rgb(43, 104, 156);
+}
+
+::selection {
+  background: var(--color-blue);
+  color: var(--color-text-secondary);
+}
+
+body {
+  color: var(--color-text-primary);
+  font-family: Inter, Arial, Helvetica, sans-serif;
+  font-size: 2.4rem;
+  line-height: 1.5;
+}
+
+h1,
+h2 {
+  margin-bottom: 1rem;
+  line-height: 1.1;
+}
+
+h1 {
+  font-size: 7rem;
+}
+
+h2 {
+  font-size: 4rem;
+}
+
+p {
+  margin-top: 0;
+}
+
+@media screen and (min-width: 1024px) {
+  body {
+    font-size: 1.8rem;
+  }
+
+  h1 {
+    font-size: 8rem;
+  }
+}
+
+/* Hero section */
+.block {
+  --block-padding-verticle: 3rem;
+  padding: var(--block-padding-verticle) 2rem;
+}
+
+.block--background {
+  background: var(--color-blue-light);
+}
+
+.block--skewed {
+  clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 95%);
+  padding: calc(var(--block-padding-verticle) + 4rem);
+}
+
+.block__input-container {
+    display: grid;
+}
+
+.block__input-container input {
+    margin-bottom: 2rem;
+}
+
+.block__input-container label {
+    font-weight: 500;
+}

@@ -11,26 +11,24 @@
 
   <body>
     <header>
-      <h1>Please fill out this form</h1>
+      <nav>
+        
+      </nav>
     </header>
 
-    <section>
+    <section class="block block--skewed block--background">
       <form action="POST">
-        <div>
-          <label for="name"></label>
-          <input name="name" placeholder="Enter your name" required />
-        </div>
+        <div class="block block__input-container">
+          <label for="name">Enter your full name</label>
+          <input name="name" placeholder="Ex. John Doe" required />
 
-        <div>
-          <label for="email"></label>
-          <input name="email" placeholder="Enter your email" required />
-        </div>
+          <label for="email">Enter your Email</label>
+          <input name="email" placeholder="Ex. JohnDoe@gmail.com" required />
 
-        <div>
-          <label for="weChatId"></label>
-          <input name="weChatId" placeholder="Enter your weChatID (optional)" />
+          <label for="weChatId">Enter your WeChatID (optional)</label>
+          <input name="weChatId" placeholder="Ex. JohnDoe813" />
+          <input type="submit" value="Submit" />
         </div>
-        <input type="submit" value="Submit" />
       </form>
     </section>
 
