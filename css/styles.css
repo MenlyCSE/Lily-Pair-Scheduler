@@ -64,8 +64,7 @@ p {
 
 /* Hero section */
 .block {
-  --block-padding-verticle: 3rem;
-  padding: var(--block-padding-verticle) 3rem;
+  padding: 3rem 3rem;
 }
 
 .block--background {
@@ -104,14 +103,14 @@ p {
   background: none;
   border-radius: 0.5rem;
   border: var(--color-blue-darker) solid 1px;
+  color: var(--color-grey-darker);
   margin-bottom: 2rem;
   padding: 0.75rem;
-  color: var(--color-grey-darker);
 }
 
 .block__form-container input:focus {
-  outline: var(--color-blue-normal) solid 2px;
   box-shadow: 0 0 5px var(--color-blue-normal);
+  outline: var(--color-blue-normal) solid 2px;
 }
 
 .block__form-container input,
