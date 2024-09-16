@@ -10,14 +10,14 @@ html {
 }
 
 :root {
-  --color-black: rgb(20, 20, 20);
   --color-black-light: rgb(88, 88, 88);
-  --color-blue-normal: rgb(40, 119, 197);
+  --color-black: rgb(20, 20, 20);
   --color-blue-dark: rgb(43, 104, 156);
   --color-blue-darker: rgb(37, 87, 131);
   --color-blue-light: rgb(43, 104, 156, 0.2);
-  --color-white: rgb(255, 255, 255);
+  --color-blue-normal: rgb(40, 119, 197);
   --color-transparent-white: rgb(255, 255, 255, 0.8);
+  --color-white: rgb(255, 255, 255);
 }
 
 ::selection {
@@ -60,25 +60,12 @@ p {
   }
 }
 
+/* Nav Bar */
+
 /* Hero section */
 .block {
   --block-padding-verticle: 3rem;
   padding: var(--block-padding-verticle) 3rem;
-}
-
-.block__heading {
-    color: var(--color-blue-dark);
-    margin-bottom: 5rem;
-    text-align: center;
-}
-
-.block__heading h1 {
-  color: var(--color-blue-dark);
-}
-
-.block__heading p {
-  font-weight: 500;
-  color: var(--color-blue-darker);
 }
 
 .block--background {
@@ -90,39 +77,64 @@ p {
   padding: calc(var(--block-padding-verticle) + 4rem);
 }
 
+.block__heading {
+  color: var(--color-blue-dark);
+  margin-bottom: 5rem;
+  text-align: center;
+}
+
+.block__heading h1 {
+  color: var(--color-blue-dark);
+}
+
+.block__heading p {
+  font-weight: 500;
+  color: var(--color-blue-darker);
+}
+
 .block__form-container {
-    display: grid;
+  display: grid;
 }
 
 .block__form-container input {
-    background: none;
-    border-radius: 0.5rem;
-    border: var(--color-black-light) solid 1px;
-    margin-bottom: 2rem;
-    padding: 0.75rem;
-    overflow: auto;
-    text-overflow: ellipsis;
+  background: none;
+  border-radius: 0.5rem;
+  border: var(--color-black-light) solid 1px;
+  margin-bottom: 2rem;
+  padding: 0.75rem;
 }
 
 .block__form-container input:focus {
-    outline: var(--color-blue-normal) solid 2px;
-    box-shadow: 0 0 5px var(--color-blue-normal);
+  outline: var(--color-blue-normal) solid 2px;
+  box-shadow: 0 0 5px var(--color-blue-normal);
+}
+
+.block__form-container input,
+.block__form-container label {
+  overflow: auto;
+  text-overflow: ellipsis;
+}
+
+.required::after {
+  color: coral;
+  content: "*";
+  margin-left: 0.2rem;
 }
 
 .block__form-container label {
-    color: var(--color-black-light);
-    font-weight: 500;
+  color: var(--color-black-light);
+  font-weight: 500;
 }
 
 .block--light {
-    background: var(--color-transparent-white);
-    border-radius: 0.75rem;
+  background: var(--color-transparent-white);
+  border-radius: 0.75rem;
 }
 
 .block .block__submit-btn {
-    background: var(--color-blue-normal);
-    border: none;
-    color: var(--color-white);
-    cursor: pointer;
-    font-weight: 600;
+  background: var(--color-blue-normal);
+  border: none;
+  color: var(--color-white);
+  cursor: pointer;
+  font-weight: 600;
 }
