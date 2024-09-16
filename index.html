@@ -8,32 +8,35 @@
     <link href="/css/normalize.css" rel="stylesheet" />
     <link href="/css/styles.css" rel="stylesheet" />
   </head>
-
   <body>
-    <header>
-      <nav></nav>
-    </header>
-
     <section class="block block--skewed block--background">
       <div class="block__heading">
         <h1>Let us do the work!</h1>
-        <p>Simply enter the necessary information below and let our algorithm handle the rest</p>
+        <p>
+          Simply enter the necessary information below and let our algorithm
+          handle the rest
+        </p>
       </div>
       <form action="POST">
         <div class="block block__form-container block--light">
           <label for="name" class="required">Enter Full Name</label>
-          <input name="name" placeholder="Ex. John Doe" required />
+          <input name="name" id="name" placeholder="Ex. John Doe" required />
 
           <label for="email" class="required">Enter Email</label>
-          <input name="email" placeholder="Ex. JohnDoe@gmail.com" required />
+          <input
+            name="email"
+            id="email"
+            placeholder="Ex. JohnDoe@gmail.com"
+            required
+          />
 
-          <label for="weChatId">Enter WeChatID</label>
-          <input name="weChatId" placeholder="Ex. JohnDoe813" />
+          <label for="weChatID">Enter WeChatID</label>
+          <input name="weChatID" id="weChatID" placeholder="Ex. JohnDoe813" />
+
           <input type="submit" value="Submit" class="block__submit-btn" />
         </div>
       </form>
     </section>
-
     <script src="/js/formDataSubmit.js"></script>
   </body>
 </html>
