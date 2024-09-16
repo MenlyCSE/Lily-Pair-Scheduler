@@ -1,13 +1,21 @@
-<form action="POST">
-  <div class="block block__form-container block--light">
-    <label for="name" class="required">Enter Full Name</label>
-    <input name="name" placeholder="Ex. John Doe" required />
+<section class="block block--background">
+  <form action="POST">
+    <div class="block block__form-container block--light">
+      <label for="name" class="required">Enter Full Name</label>
+      <input name="name" id="name" placeholder="Ex. John Doe" required />
 
-    <label for="email" class="required">Enter Email</label>
-    <input name="email" placeholder="Ex. JohnDoe@gmail.com" required />
+      <label for="email" class="required">Enter Email</label>
+      <input
+        name="email"
+        id="email"
+        placeholder="Ex. JohnDoe@gmail.com"
+        required
+      />
 
-    <label for="weChatId">Enter WeChatID</label>
-    <input name="weChatId" placeholder="Ex. JohnDoe813" />
-    <input type="submit" value="Submit" class="block__submit-btn" />
-  </div>
-</form>
+      <label for="weChatID">Enter WeChatID</label>
+      <input name="weChatID" id="weChatID" placeholder="Ex. JohnDoe813" />
+
+      <input type="submit" value="Submit" class="block__submit-btn" />
+    </div>
+  </form>
+</section>

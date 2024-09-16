@@ -69,18 +69,21 @@ p {
 }
 
 .block--background {
+  padding: 1rem 7rem 0 7rem;
+}
+
+.block--background-primary {
   background: var(--color-blue-light);
 }
 
 .block--skewed {
   clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 95%);
-  padding: calc(var(--block-padding-verticle) + 4rem);
 }
 
 .block__heading {
   color: var(--color-blue-dark);
-  margin-bottom: 5rem;
   text-align: center;
+  padding-bottom: 15rem;
 }
 
 .block__heading h1 {
@@ -94,6 +97,7 @@ p {
 
 .block__form-container {
   display: grid;
+  transform: translateY(-15rem);
 }
 
 .block__form-container input {
@@ -129,6 +133,7 @@ p {
 .block--light {
   background: var(--color-transparent-white);
   border-radius: 0.75rem;
+  box-shadow: 0 0 5px var(--color-blue-darker);
 }
 
 .block .block__submit-btn {
