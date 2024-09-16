@@ -97,6 +97,7 @@ p {
 .block__form-container {
   display: grid;
   transform: translateY(-15rem);
+  width: 60rem;
 }
 
 .block__form-container input {
@@ -115,8 +116,10 @@ p {
 
 .block__form-container input,
 .block__form-container label {
-  overflow: auto;
+  overflow: hidden;
   text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 100%;
 }
 
 .required::after {
