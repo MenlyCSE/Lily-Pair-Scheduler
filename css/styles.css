@@ -97,7 +97,6 @@ p {
 .block__form-container {
   display: grid;
   transform: translateY(-15rem);
-  width: 60rem;
 }
 
 .block__form-container input {
