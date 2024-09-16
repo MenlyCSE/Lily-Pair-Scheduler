@@ -150,8 +150,9 @@ p {
 
 .block__form-select-menu {
   list-style-type: none;
+  padding-left: 0;
 }
 
-.block__form-select-menu label {
-  display: inline;
+.block__form-select-menu input {
+  width: auto;
 }
