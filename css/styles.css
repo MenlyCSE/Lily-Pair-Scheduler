@@ -115,7 +115,8 @@ p {
 }
 
 .block__form-container input,
-.block__form-container label {
+.block__form-container label, 
+.block__form-select-menu {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
