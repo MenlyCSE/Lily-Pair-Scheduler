@@ -62,6 +62,7 @@ p {
 
 /* Nav Bar */
 
+
 /* Hero section */
 .block {
   padding: 3rem 3rem;
@@ -134,8 +135,9 @@ p {
 
 .block--light {
   background: var(--color-white);
-  border-radius: 0.75rem;
+  border-radius: 0.5rem;
   box-shadow: 0 0 5px var(--color-blue-darker);
+  border: solid var(--color-blue-darker) 1px;
 }
 
 .block .block__submit-btn {
@@ -144,4 +146,12 @@ p {
   color: var(--color-white);
   cursor: pointer;
   font-weight: 600;
+}
+
+.block__form-select-menu {
+  list-style-type: none;
+}
+
+.block__form-select-menu label {
+  display: inline;
 }

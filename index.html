@@ -37,7 +37,40 @@
           <label for="weChatID">Enter WeChatID</label>
           <input name="weChatID" id="weChatID" placeholder="Ex. JohnDoe813" />
 
-          <label for="availableTime" class="required">Enter Available Times</label>
+          <ul class="block__form-select-menu">
+            <li>
+              <input type="checkbox" value="" id="Mondays" />
+              <label for="Mondays">Mondays</label>
+            </li>
+            <li>
+              <input type="checkbox" value="" id="Tuesdays" />
+              <label for="Tuesdays">Mondays</label>
+            </li>
+            <li>
+              <input type="checkbox" value="" id="Wednesdays" />
+              <label for="Wednesdays">Wednesdays</label>
+            </li>
+            <li>
+              <input type="checkbox" value="" id="Thursdays" />
+              <label for="Thursdays">Thursdays</label>
+            </li>
+            <li>
+              <input type="checkbox" value="" id="Fridays" />
+              <label for="Fridays">Fridays</label>
+            </li>
+            <li>
+              <input type="checkbox" value="" id="Saturdays" />
+              <label for="Saturdays">Saturdays</label>
+            </li>
+            <li>
+              <input type="checkbox" value="" id="Sundays" />
+              <label for="Sundays">Sundays</label>
+            </li>
+          </ul>
+
+          <label for="availableTime" class="required"
+            >Enter Available Times
+          </label>
           <input
             name="availableTime"
             id="availableTime"
@@ -45,14 +78,14 @@
             required
           />
 
-          <label for="timezone" class="required">Enter Timezone</label>
+          <label for="timezone" class="required">Add Timezone</label>
           <input
             name="timezone"
             id="timezone"
             placeholder="Ex. EST (Eastern Standard Time)"
             required
           />
-          
+
           <input type="submit" value="Submit" class="block__submit-btn" />
         </div>
       </form>
