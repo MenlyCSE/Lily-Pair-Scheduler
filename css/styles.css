@@ -17,7 +17,7 @@ html {
   --color-blue-light: rgb(43, 104, 156, 0.2);
   --color-blue-normal: rgb(40, 119, 197);
   --color-grey-darker: rgb(62, 62, 62);
-  --color-white: rgb(255, 255, 255);
+  --color-white: rgb(253, 253, 253);
 }
 
 ::selection {
@@ -81,8 +81,8 @@ p {
 
 .block__heading {
   color: var(--color-blue-dark);
-  text-align: center;
   padding-bottom: 15rem;
+  text-align: center;
 }
 
 .block__heading h1 {
@@ -90,8 +90,8 @@ p {
 }
 
 .block__heading p {
-  font-weight: 500;
   color: var(--color-blue-darker);
+  font-weight: 500;
 }
 
 .block__form-container {

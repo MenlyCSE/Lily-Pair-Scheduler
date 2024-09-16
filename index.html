@@ -9,7 +9,9 @@
     <link href="/css/styles.css" rel="stylesheet" />
   </head>
   <body>
-    <section class="block block--skewed block--background block--background-primary">
+    <section
+      class="block block--skewed block--background block--background-primary"
+    >
       <div class="block__heading">
         <h1>Let us do the work!</h1>
         <p>
@@ -35,6 +37,22 @@
           <label for="weChatID">Enter WeChatID</label>
           <input name="weChatID" id="weChatID" placeholder="Ex. JohnDoe813" />
 
+          <label for="availableTime" class="required">Enter Available Times</label>
+          <input
+            name="availableTime"
+            id="availableTime"
+            placeholder="Ex. Fridays from 1 to 5 PM"
+            required
+          />
+
+          <label for="timezone" class="required">Enter Timezone</label>
+          <input
+            name="timezone"
+            id="timezone"
+            placeholder="Ex. EST (Eastern Standard Time)"
+            required
+          />
+          
           <input type="submit" value="Submit" class="block__submit-btn" />
         </div>
       </form>
