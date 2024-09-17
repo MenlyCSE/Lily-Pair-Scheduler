@@ -62,7 +62,6 @@ p {
 
 /* Nav Bar */
 
-
 /* Hero section */
 .block {
   padding: 3rem 3rem;
@@ -86,10 +85,6 @@ p {
   text-align: center;
 }
 
-.block__heading h1 {
-  color: var(--color-blue-dark);
-}
-
 .block__heading p {
   color: var(--color-blue-darker);
   font-weight: 500;
@@ -100,27 +95,27 @@ p {
   transform: translateY(-15rem);
 }
 
-.block__form-container input {
-  background: none;
-  border-radius: 0.5rem;
-  border: var(--color-blue-darker) solid 1px;
-  color: var(--color-grey-darker);
-  margin-bottom: 2rem;
-  padding: 0.75rem;
-}
-
-.block__form-container input:focus {
-  box-shadow: 0 0 5px var(--color-blue-normal);
-  outline: var(--color-blue-normal) solid 2px;
-}
-
-.block__form-container input,
-.block__form-container label, 
-.block__form-select-menu {
+.btn,
+.input,
+.label,
+.select-menu {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-  width: 100%;
+}
+
+.input {
+  padding: 0.75rem;
+  margin-bottom: 2rem;
+  width: auto;
+}
+
+.btn {
+  border: none;
+  cursor: pointer;
+  margin-top: 2rem;
+  padding: 1rem 1.5rem;
+  width: auto;
 }
 
 .required::after {
@@ -129,23 +124,37 @@ p {
   margin-left: 0.2rem;
 }
 
-.block__form-container label {
+.input--primary,
+.btn--primary,
+.block--light {
+  border-radius: 0.5rem;
+}
+
+.input--primary {
+  background: none;
+  border: var(--color-blue-darker) solid 1px;
+  color: var(--color-grey-darker);
+}
+
+.input--primary:focus {
+  box-shadow: 0 0 5px var(--color-blue-normal);
+  outline: var(--color-blue-normal) solid 2px;
+}
+
+.label--primary {
   color: var(--color-blue-darker);
   font-weight: 500;
 }
 
 .block--light {
   background: var(--color-white);
-  border-radius: 0.5rem;
   box-shadow: 0 0 5px var(--color-blue-darker);
   border: solid var(--color-blue-darker) 1px;
 }
 
-.block .block__submit-btn {
+.btn--primary {
   background: var(--color-blue-normal);
-  border: none;
   color: var(--color-white);
-  cursor: pointer;
   font-weight: 600;
 }
 
@@ -154,6 +163,6 @@ p {
   padding-left: 0;
 }
 
-.block__form-select-menu input {
-  width: auto;
+.block__submit-btn {
+  justify-self: center;
 }

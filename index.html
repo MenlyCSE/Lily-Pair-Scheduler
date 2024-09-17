@@ -23,70 +23,73 @@
     <section class="block block--background">
       <form action="POST">
         <div class="block block__form-container block--light">
-          <label for="name" class="required">Enter Full Name</label>
-          <input name="name" id="name" placeholder="Ex. John Doe" required />
+          <label for="name" class="label label--primary required">Enter Full Name</label>
+          <input name="name" id="name" placeholder="Ex. John Doe" class="input input--primary" required />
 
-          <label for="email" class="required">Enter Email</label>
+          <label for="email" class="label label--primary required">Enter Email</label>
           <input
             name="email"
             id="email"
             placeholder="Ex. JohnDoe@gmail.com"
+            class="input input--primary"
             required
           />
 
-          <label for="weChatID">Enter WeChatID</label>
-          <input name="weChatID" id="weChatID" placeholder="Ex. JohnDoe813" />
+          <label for="weChatID" class="label label--primary">Enter WeChatID</label>
+          <input name="weChatID" id="weChatID" placeholder="Ex. JohnDoe813" class="input input--primary" />
 
-          <ul class="block__form-select-menu">
+          <ul class="select-menu block__form-select-menu">
             <li>
               <input type="checkbox" value="" id="Mondays" />
-              <label for="Mondays">Mondays</label>
+              <label for="Mondays" class="label label--primary">Mondays</label>
             </li>
             <li>
               <input type="checkbox" value="" id="Tuesdays" />
-              <label for="Tuesdays">Tuesdays</label>
+              <label for="Tuesdays" class="label label--primary">Tuesdays</label>
             </li>
             <li>
               <input type="checkbox" value="" id="Wednesdays" />
-              <label for="Wednesdays">Wednesdays</label>
+              <label for="Wednesdays" class="label label--primary">Wednesdays</label>
             </li>
             <li>
               <input type="checkbox" value="" id="Thursdays" />
-              <label for="Thursdays">Thursdays</label>
+              <label for="Thursdays" class="label label--primary">Thursdays</label>
             </li>
             <li>
               <input type="checkbox" value="" id="Fridays" />
-              <label for="Fridays">Fridays</label>
+              <label for="Fridays" class="label label--primary">Fridays</label>
             </li>
             <li>
               <input type="checkbox" value="" id="Saturdays" />
-              <label for="Saturdays">Saturdays</label>
+              <label for="Saturdays" class="label label--primary">Saturdays</label>
             </li>
             <li>
               <input type="checkbox" value="" id="Sundays" />
-              <label for="Sundays">Sundays</label>
+              <label for="Sundays" class="label label--primary">Sundays</label>
             </li>
           </ul>
 
-          <label for="availableTime" class="required"
+          <label for="availableTime" class="label label--primary required"
             >Enter Available Times
           </label>
           <input
             name="availableTime"
             id="availableTime"
             placeholder="Ex. Fridays from 1 to 5 PM"
+            class="input input--primary"
             required
           />
 
-          <label for="timezone" class="required">Add Timezone</label>
+          <label for="timezone" class="label label--primary required">Add Timezone</label>
           <input
             name="timezone"
             id="timezone"
             placeholder="Ex. EST (Eastern Standard Time)"
+            class="input input--primary"
             required
           />
 
-          <input type="submit" value="Submit" class="block__submit-btn" />
+          <input type="submit" value="Submit" class="btn btn--primary block__submit-btn" />
         </div>
       </form>
     </section>
