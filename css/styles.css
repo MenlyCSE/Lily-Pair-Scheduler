@@ -74,7 +74,7 @@ p {
 
 .btn,
 .checkbox--primary,
-.select-menu label {
+.label--secondary {
   cursor: pointer;
 }
 
