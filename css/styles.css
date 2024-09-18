@@ -1,8 +1,4 @@
-/* Typography */
-html {
-  font-size: 62.5%;
-}
-
+/* Universal */
 *,
 *::after,
 *::before {
@@ -18,6 +14,12 @@ html {
   --color-blue-normal: rgb(40, 119, 197);
   --color-grey-darker: rgb(62, 62, 62);
   --color-white: rgb(253, 253, 253);
+  --border-radius: 0.5rem;
+}
+
+/* Typography */
+html {
+  font-size: 62.5%;
 }
 
 ::selection {
@@ -60,9 +62,83 @@ p {
   }
 }
 
-/* Nav Bar */
+/* Inputs, Labels, Buttons, Check Boxes */
+.btn,
+.input,
+.label,
+.select-menu {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
 
-/* Hero section */
+.btn,
+.checkbox--primary,
+.select-menu label {
+  cursor: pointer;
+}
+
+.input--primary,
+.btn--primary {
+  border-radius: var(--border-radius);
+}
+
+/* Inputs */
+.input {
+  padding: 0.75rem;
+  margin-bottom: 2rem;
+  width: auto;
+}
+
+.input--primary {
+  background: none;
+  border: var(--color-blue-darker) solid 1px;
+  color: var(--color-grey-darker);
+}
+
+.input--primary:focus {
+  box-shadow: 0 0 5px var(--color-blue-normal);
+  outline: var(--color-blue-normal) solid 2px;
+}
+
+/* Labels */
+.label--primary {
+  color: var(--color-blue-darker);
+  font-weight: 500;
+}
+
+.label--secondary {
+  color: var(--color-black-light);
+}
+
+.required::after {
+  color: coral;
+  content: "*";
+  margin-left: 0.2rem;
+}
+
+/* Buttons */
+.btn {
+  border: none;
+  margin-top: 2rem;
+  padding: 1rem 1.5rem;
+  width: auto;
+}
+
+.btn--primary {
+  background: var(--color-blue-normal);
+  color: var(--color-white);
+  font-weight: 600;
+}
+
+/* Check Boxes */
+.checkbox--primary:checked {
+  accent-color: var(--color-blue-darker);
+  border: none;
+  outline: none;
+}
+
+/* Welcome Page */
 .block {
   padding: 3rem 3rem;
 }
@@ -95,67 +171,11 @@ p {
   transform: translateY(-15rem);
 }
 
-.btn,
-.input,
-.label,
-.select-menu {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-
-.input {
-  padding: 0.75rem;
-  margin-bottom: 2rem;
-  width: auto;
-}
-
-.btn {
-  border: none;
-  cursor: pointer;
-  margin-top: 2rem;
-  padding: 1rem 1.5rem;
-  width: auto;
-}
-
-.required::after {
-  color: coral;
-  content: "*";
-  margin-left: 0.2rem;
-}
-
-.input--primary,
-.btn--primary,
-.block--light {
-  border-radius: 0.5rem;
-}
-
-.input--primary {
-  background: none;
-  border: var(--color-blue-darker) solid 1px;
-  color: var(--color-grey-darker);
-}
-
-.input--primary:focus {
-  box-shadow: 0 0 5px var(--color-blue-normal);
-  outline: var(--color-blue-normal) solid 2px;
-}
-
-.label--primary {
-  color: var(--color-blue-darker);
-  font-weight: 500;
-}
-
 .block--light {
   background: var(--color-white);
-  box-shadow: 0 0 5px var(--color-blue-darker);
+  border-radius: var(--border-radius);
   border: solid var(--color-blue-darker) 1px;
-}
-
-.btn--primary {
-  background: var(--color-blue-normal);
-  color: var(--color-white);
-  font-weight: 600;
+  box-shadow: 0 0 5px var(--color-blue-darker);
 }
 
 .block__form-select-menu {

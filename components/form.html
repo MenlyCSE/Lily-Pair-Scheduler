@@ -1,21 +1,70 @@
-<section class="block block--background">
-  <form action="POST">
-    <div class="block block__form-container block--light">
-      <label for="name" class="required">Enter Full Name</label>
-      <input name="name" id="name" placeholder="Ex. John Doe" required />
+<form action="POST">
+  <!-- fetch: https://timeapi.io/api/timezone/availabletimezones -->
+  <div class="block block__form-container block--light">
+    <label for="name" class="label label--primary required"
+      >Enter Full Name</label
+    >
+    <input
+      name="name"
+      id="name"
+      placeholder="Ex. John Doe"
+      class="input input--primary"
+      required
+    />
 
-      <label for="email" class="required">Enter Email</label>
-      <input
-        name="email"
-        id="email"
-        placeholder="Ex. JohnDoe@gmail.com"
-        required
-      />
+    <label for="email" class="label label--primary required">Enter Email</label>
+    <input
+      name="email"
+      id="email"
+      placeholder="Ex. JohnDoe@gmail.com"
+      class="input input--primary"
+      required
+    />
 
-      <label for="weChatID">Enter WeChatID</label>
-      <input name="weChatID" id="weChatID" placeholder="Ex. JohnDoe813" />
+    <label for="weChatID" class="label label--primary">Enter WeChatID</label>
+    <input
+      name="weChatID"
+      id="weChatID"
+      placeholder="Ex. JohnDoe813"
+      class="input input--primary"
+    />
 
-      <input type="submit" value="Submit" class="block__submit-btn" />
-    </div>
-  </form>
-</section>
+    <ul class="select-menu block__form-select-menu">
+      <label for="weChatID" class="label label--primary required"
+        >Select available time</label
+      >
+      <li>
+        <input type="checkbox" class="checkbox--primary" id="Mondays" />
+        <label for="Mondays" class="label label--secondary">Mondays</label>
+      </li>
+    </ul>
+
+    <label for="availableTime" class="label label--primary required"
+      >Enter Available Times
+    </label>
+    <input
+      name="availableTime"
+      id="availableTime"
+      placeholder="Ex. Fridays from 1 to 5 PM"
+      class="input input--primary"
+      required
+    />
+
+    <label for="timezone" class="label label--primary required"
+      >Add Timezone</label
+    >
+    <input
+      name="timezone"
+      id="timezone"
+      placeholder="Ex. EST (Eastern Standard Time)"
+      class="input input--primary"
+      required
+    />
+
+    <input
+      type="submit"
+      value="Submit"
+      class="btn btn--primary block__submit-btn"
+    />
+  </div>
+</form>
