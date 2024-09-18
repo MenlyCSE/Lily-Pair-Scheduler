@@ -38,7 +38,7 @@
           <label for="weChatID" class="label label--primary">Enter WeChatID</label>
           <input name="weChatID" id="weChatID" placeholder="Ex. JohnDoe813" class="input input--primary" />
 
-          <ul class="select-menu block__form-select-menu">
+          <ul class="checkbox block__form-checkbox">
             <label class="label label--primary required">Select available time</label>
             <li>
               <input type="checkbox" class="checkbox--primary" id="Mondays" />
@@ -81,14 +81,13 @@
             required
           />
 
-          <label for="timezone" class="label label--primary required">Add Timezone</label>
-          <input
-            name="timezone"
-            id="timezone"
-            placeholder="Ex. EST (Eastern Standard Time)"
-            class="input input--primary"
-            required
-          />
+          <label class="label label--primary required">Select a Timezone</label>
+          <select class="select-menu select-menu--primary input label--secondary">
+            <option value="" selected disabled>Ex. EST (Eastern Standard Time)</option>
+            <option value="">1</option>
+            <option value="">1</option>
+            <option value="">1</option>
+          </select>
 
           <input type="submit" value="Submit" class="btn btn--primary block__submit-btn" />
         </div>

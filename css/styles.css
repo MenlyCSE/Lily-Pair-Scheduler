@@ -62,10 +62,11 @@ p {
   }
 }
 
-/* Inputs, Labels, Buttons, Check Boxes */
+/* Inputs, Labels, Buttons, Checkboxes, Select Menu */
 .btn,
 .input,
 .label,
+.checkbox,
 .select-menu {
   overflow: hidden;
   text-overflow: ellipsis;
@@ -79,7 +80,8 @@ p {
 }
 
 .input--primary,
-.btn--primary {
+.btn--primary,
+.select-menu--primary {
   border-radius: var(--border-radius);
 }
 
@@ -131,11 +133,21 @@ p {
   font-weight: 600;
 }
 
-/* Check Boxes */
+/* Checkboxes */
 .checkbox--primary:checked {
   accent-color: var(--color-blue-darker);
   border: none;
   outline: none;
+}
+
+/* Select Menu */
+.select-menu {
+  width: 100%;
+}
+
+.select-menu:focus {
+  box-shadow: 0 0 5px var(--color-blue-normal);
+  outline: var(--color-blue-normal) solid 2px;
 }
 
 /* Welcome Page */
@@ -178,7 +190,7 @@ p {
   box-shadow: 0 0 5px var(--color-blue-darker);
 }
 
-.block__form-select-menu {
+.block__form-checkbox {
   list-style-type: none;
   margin-bottom: 3rem;
   margin-top: 1rem;
