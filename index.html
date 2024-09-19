@@ -21,7 +21,7 @@
       </div>
     </section>
     <section class="block block--background">
-      <form action="POST">
+      <form action="POST" class="block__form">
         <div class="block block__form-container block--light">
           <label for="name" class="label label--primary required">Enter Full Name</label>
           <input name="name" id="name" placeholder="Ex. John Doe" class="input input--primary" required />
@@ -80,10 +80,9 @@
             class="input input--primary"
             required
           />
-
-          <label class="label label--primary required">Select a Timezone</label>
+          
           <select class="select-menu select-menu--primary input label--secondary" id="select-menu">
-            <option value="" selected disabled>Ex. EST (Eastern Standard Time)</option>
+            <option value="" selected disabled>Select a Timezone</option>
             <option value="">1</option>
             <option value="">1</option>
             <option value="">1</option>
@@ -93,6 +92,6 @@
         </div>
       </form>
     </section>
-    <script src="/js/getTimezoneData.js"></script>
+    <!-- <script src="/js/getTimezoneData.js"></script> -->
   </body>
 </html>
