@@ -9,4 +9,4 @@ const timezoneAPI = `https://timeapi.io/api/timezone/availabletimezones`;
 
 
 
-// challenge: instead of rendering all the options at once, try to split it.
+// challenge: do not render all the options at once. Split it
