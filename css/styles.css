@@ -64,6 +64,35 @@ p {
   }
 }
 
+/* Nav Bar */
+.nav {
+  align-items: center;
+  background: var(--color-blue-darker);
+  display: flex;
+  justify-content: center;
+}
+
+.nav__list {
+  padding: 0;
+}
+
+.nav__item {
+  margin: 2rem;
+  white-space: nowrap;
+}
+
+.nav__item > a {
+  color: var(--color-white);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.nav__item > a:hover {
+  background: coral;
+  border-radius: var(--border-radius);
+  padding: 0.5rem;
+}
+
 /* Inputs, Labels, Buttons, Checkboxes, Select Menu */
 .btn,
 .input,
