@@ -73,8 +73,8 @@ p {
 }
 
 .nav__list {
-  padding: 0;
   margin: 1.5rem 0 1.5rem 0rem;
+  padding: 0;
 }
 
 .nav__item {
@@ -86,12 +86,14 @@ p {
   color: var(--color-white);
   font-weight: 600;
   text-decoration: none;
+  text-transform: uppercase;
+  transition: var(--transition-primary);
 }
 
 .nav__item > a:hover {
   background: coral;
   border-radius: var(--border-radius);
-  padding: 0.5rem;
+  padding: 0.5rem 1rem;
 }
 
 /* Inputs, Labels, Buttons, Checkboxes, Select Menu */
@@ -271,41 +273,3 @@ p {
   }
   
 }
-
-/* .navbar {
-  border-bottom: 1px solid #BBBBBB;
-}
-
-.nav-link {
-  font-weight: bold;
-  font-size: 14px;
-  text-transform: uppercase;
-  text-decoration: none;
-  color: #031D44;
-  padding: 20px 0px;
-  margin: 0px 20px;
-  display: inline-block;
-  position: relative;
-  opacity: 0.75;
-}
-
-.nav-link:hover {
-  opacity: 1;
-}
-
-.nav-link::before {
-  transition: 300ms;
-  height: 5px;
-  content: "";
-  position: absolute;
-  background-color: #031D44;
-}
-
-.nav-link-ltr::before {
-  width: 0%;
-  bottom: 10px;
-}
-
-.nav-link-ltr:hover::before {
-  width: 100%;
-} */
