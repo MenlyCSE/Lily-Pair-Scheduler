@@ -74,6 +74,7 @@ p {
 
 .nav__list {
   padding: 0;
+  margin: 1.5rem 0 1.5rem 0rem;
 }
 
 .nav__item {
@@ -137,6 +138,10 @@ p {
 }
 
 /* Labels */
+.label {
+  margin-left: 0.1rem;
+}
+
 .label--primary {
   color: var(--color-blue-darker);
   font-weight: 500;
@@ -212,7 +217,7 @@ p {
 }
 
 .block--skewed {
-  clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 95%);
+  clip-path: polygon(100% 100%, 50% 85%, 0 100%, 0 0, 50% 0, 100% 0);
 }
 
 .block__heading {
@@ -259,3 +264,48 @@ p {
     width: 65rem;
   }
 }
+
+@media screen and (max-width: 1024px) {
+  .block--skewed {
+    clip-path: polygon(100% 100%, 50% 90%, 0 100%, 0 0, 50% 0, 100% 0);
+  }
+  
+}
+
+/* .navbar {
+  border-bottom: 1px solid #BBBBBB;
+}
+
+.nav-link {
+  font-weight: bold;
+  font-size: 14px;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #031D44;
+  padding: 20px 0px;
+  margin: 0px 20px;
+  display: inline-block;
+  position: relative;
+  opacity: 0.75;
+}
+
+.nav-link:hover {
+  opacity: 1;
+}
+
+.nav-link::before {
+  transition: 300ms;
+  height: 5px;
+  content: "";
+  position: absolute;
+  background-color: #031D44;
+}
+
+.nav-link-ltr::before {
+  width: 0%;
+  bottom: 10px;
+}
+
+.nav-link-ltr:hover::before {
+  width: 100%;
+} */
