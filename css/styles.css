@@ -216,6 +216,24 @@ p {
   outline: var(--color-accent) solid 1px;
 }
 
+/* Cards */
+.card {
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 5rem;
+}
+
+.card--primary {
+  background: coral;
+  border-radius: var(--border-radius);
+}
+
+.card__header {
+  margin-top: 0;
+  margin-bottom: 3rem;
+}
+
 /* Welcome Page */
 .block {
   padding: 3rem 3rem;
@@ -231,11 +249,11 @@ p {
 
 .block--skewed {
   clip-path: polygon(100% 100%, 50% 85%, 0 100%, 0 0, 50% 0, 100% 0);
+  padding-bottom: 15rem;
 }
 
 .block__heading {
   color: var(--color-blue-dark);
-  padding-bottom: 15rem;
   text-align: center;
 }
 
