@@ -229,13 +229,13 @@ p {
   text-align: center;
 }
 
-.card--primary .card__body  {
+.card--primary .card__body {
   border-bottom: var(--color-blue-light) solid 4px;
   border-left: var(--color-blue-light) solid 4px;
   border-right: var(--color-blue-light) solid 4px;
 }
 
-.card--secondary .card__body  {
+.card--secondary .card__body {
   border-bottom: var(--color-accent-lighter) solid 4px;
   border-left: var(--color-accent-lighter) solid 4px;
   border-right: var(--color-accent-lighter) solid 4px;
