@@ -218,20 +218,28 @@ p {
 
 /* Cards */
 .card {
-  display: grid;
-  align-items: center;
-  justify-content: center;
-  padding: 4rem 5rem;
-}
-
-.card--primary {
-  background: coral;
   border-radius: var(--border-radius);
+  overflow: hidden;
 }
 
 .card__header {
-  margin-top: 0;
-  margin-bottom: 3rem;
+  color: white;
+  padding: 2.5rem;
+  text-align: center;
+}
+
+.card__body {
+  border-bottom: var(--color-blue-light) solid 4px;
+  border-left: var(--color-blue-light) solid 4px;
+  border-right: var(--color-blue-light) solid 4px;
+}
+
+.card--primary .card__header {
+  background: var(--color-blue-lighter);
+}
+
+.card--secondary .card__header {
+  background: var(--color-accent);
 }
 
 /* Welcome Page */
