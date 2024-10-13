@@ -231,8 +231,13 @@ p {
 
 /* Cards */
 .card {
+  margin-bottom: 5rem;
+}
+
+.card--primary,
+.card--secondary {
   background: var(--color-white);
-  border-radius: 7px;
+  border-radius: var(--border-radius);
   box-shadow: var(--box-shadow);
 }
 
@@ -242,7 +247,10 @@ p {
 }
 
 .card__header {
+  border-top-left-radius: var(--border-radius);
+  border-top-right-radius: var(--border-radius);
   color: var(--color-white);
+  text-align: center;
 }
 
 .card--primary .card__header {
