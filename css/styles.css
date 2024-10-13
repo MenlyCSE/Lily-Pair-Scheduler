@@ -122,6 +122,17 @@ p {
   border-radius: var(--border-radius);
 }
 
+/* Blocks */
+.block {
+  padding: 3rem 3rem;
+}
+
+.block--skewed {
+  background: var(--color-blue-light);
+  clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 97%);
+  padding-bottom: 10rem;
+}
+
 /* Inputs */
 .input {
   padding: 0.75rem;
@@ -249,19 +260,10 @@ p {
   background: var(--color-accent);
 }
 
-/* Welcome Page */
-.block {
-  padding: 3rem 3rem;
-}
-
-.block--skewed {
-  clip-path: polygon(100% 100%, 50% 85%, 0 100%, 0 0, 50% 0, 100% 0);
-  padding-bottom: 15rem;
-  background: var(--color-blue-light);
-}
-
+/* Main Page */
 .block__heading {
   color: var(--color-blue-dark);
+  margin-bottom: 3rem;
   text-align: center;
 }
 
@@ -301,10 +303,6 @@ p {
 }
 
 @media screen and (max-width: 1024px) {
-  .block--skewed {
-    clip-path: polygon(100% 100%, 50% 90%, 0 100%, 0 0, 50% 0, 100% 0);
-  }
-
   .block__submit-btn {
     width: 45%;
   }
