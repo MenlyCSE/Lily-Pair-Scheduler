@@ -229,6 +229,21 @@ p {
   outline: var(--color-accent) solid 1px;
 }
 
+/* Lists */
+.list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.list--primary {
+  color: var(--color-blue-darker);
+  font-weight: 500;
+}
+
+.list__item {
+  margin-bottom: 2rem;
+}
+
 /* Cards */
 .card {
   margin-bottom: 5rem;
@@ -251,6 +266,10 @@ p {
   border-top-right-radius: var(--border-radius);
   color: var(--color-white);
   text-align: center;
+}
+
+.card__header h2 {
+  margin: 3rem;
 }
 
 .card--primary .card__header {
