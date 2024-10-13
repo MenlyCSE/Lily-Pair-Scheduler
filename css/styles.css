@@ -7,6 +7,7 @@
 
 :root {
   --border-radius: 0.5rem;
+  --box-shadow: 0 0 20px 10px #f3f3f3;
   --color-accent-light: rgb(255, 127, 80, 0.6);
   --color-accent-lighter: rgb(255, 127, 80, 0.25);
   --color-accent: coral;
@@ -230,26 +231,18 @@ p {
 
 /* Cards */
 .card {
-  border-radius: var(--border-radius);
-  overflow: hidden;
+  background: var(--color-white);
+  border-radius: 7px;
+  box-shadow: var(--box-shadow);
+}
+
+.card__header,
+.card__body {
+  padding: 2rem 3rem;
 }
 
 .card__header {
-  color: white;
-  padding: 2.5rem;
-  text-align: center;
-}
-
-.card--primary .card__body {
-  border-bottom: var(--color-blue-light) solid 4px;
-  border-left: var(--color-blue-light) solid 4px;
-  border-right: var(--color-blue-light) solid 4px;
-}
-
-.card--secondary .card__body {
-  border-bottom: var(--color-accent-lighter) solid 4px;
-  border-left: var(--color-accent-lighter) solid 4px;
-  border-right: var(--color-accent-lighter) solid 4px;
+  color: var(--color-white);
 }
 
 .card--primary .card__header {
