@@ -18,7 +18,7 @@
         </ul>
       </nav>
     </header>
-    <section class="block block--skewed block--background block--background-primary">
+    <section class="block block--skewed">
       <div class="block__heading">
         <h1>Let us do the work!</h1>
         <p>
@@ -26,10 +26,10 @@
           handle the rest
         </p>
       </div>
-    </section>
-    <section class="block block--background">
+
       <form action="POST" class="block__form">
-        <div class="block block__form-container block--light">
+        <fieldset class="block block__form--primary">
+
           <label for="name" class="label label--primary required">Enter Full Name</label>
           <input name="name" id="name" placeholder="Ex. John Doe" class="input input--primary" required />
 
@@ -80,6 +80,7 @@
           <label for="availableTime" class="label label--primary required"
             >Enter Available Times
           </label>
+          
           <input
             name="availableTime"
             id="availableTime"
@@ -96,7 +97,7 @@
           </select>
 
           <input type="submit" value="Send" class="btn btn--primary block__submit-btn" />
-        </div>
+        </fieldset>
       </form>
     </section>
     <!-- <script src="/js/getTimezoneData.js"></script> -->

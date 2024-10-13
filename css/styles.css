@@ -254,17 +254,10 @@ p {
   padding: 3rem 3rem;
 }
 
-.block--background {
-  padding: 1rem 7rem 0 7rem;
-}
-
-.block--background-primary {
-  background: var(--color-blue-light);
-}
-
 .block--skewed {
   clip-path: polygon(100% 100%, 50% 85%, 0 100%, 0 0, 50% 0, 100% 0);
   padding-bottom: 15rem;
+  background: var(--color-blue-light);
 }
 
 .block__heading {
@@ -277,16 +270,12 @@ p {
   font-weight: 500;
 }
 
-.block__form-container {
-  display: grid;
-  transform: translateY(-15rem);
-}
-
-.block--light {
+.block__form--primary {
   background: var(--color-white);
   border-radius: var(--border-radius);
   border: solid var(--color-blue-darker) 1px;
   box-shadow: 0 0 5px var(--color-blue-darker);
+  display: grid;
 }
 
 .block__form-checkbox {

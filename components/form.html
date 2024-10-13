@@ -1,15 +1,8 @@
-<form action="POST">
-  <div class="block block__form-container block--light">
-    <label for="name" class="label label--primary required"
-      >Enter Full Name</label
-    >
-    <input
-      name="name"
-      id="name"
-      placeholder="Ex. John Doe"
-      class="input input--primary"
-      required
-    />
+<form action="POST" class="block__form">
+  <fieldset class="block block__form--primary">
+
+    <label for="name" class="label label--primary required">Enter Full Name</label>
+    <input name="name" id="name" placeholder="Ex. John Doe" class="input input--primary" required />
 
     <label for="email" class="label label--primary required">Enter Email</label>
     <input
@@ -21,26 +14,44 @@
     />
 
     <label for="weChatID" class="label label--primary">Enter WeChatID</label>
-    <input
-      name="weChatID"
-      id="weChatID"
-      placeholder="Ex. JohnDoe813"
-      class="input input--primary"
-    />
+    <input name="weChatID" id="weChatID" placeholder="Ex. JohnDoe813" class="input input--primary" />
 
-    <ul class="select-menu block__form-select-menu">
-      <label for="weChatID" class="label label--primary required"
-        >Select available time</label
-      >
+    <ul class="checkbox block__form-checkbox">
+      <label class="label label--primary required">Select available time</label>
       <li>
         <input type="checkbox" class="checkbox--primary" id="Mondays" />
         <label for="Mondays" class="label label--secondary">Mondays</label>
+      </li>
+      <li>
+        <input type="checkbox" class="checkbox--primary" id="Tuesdays" />
+        <label for="Tuesdays" class="label label--secondary">Tuesdays</label>
+      </li>
+      <li>
+        <input type="checkbox" class="checkbox--primary" id="Wednesdays" />
+        <label for="Wednesdays" class="label label--secondary">Wednesdays</label>
+      </li>
+      <li>
+        <input type="checkbox" class="checkbox--primary" id="Thursdays" />
+        <label for="Thursdays" class="label label--secondary">Thursdays</label>
+      </li>
+      <li>
+        <input type="checkbox" class="checkbox--primary" id="Fridays" />
+        <label for="Fridays" class="label label--secondary">Fridays</label>
+      </li>
+      <li>
+        <input type="checkbox" class="checkbox--primary" id="Saturdays" />
+        <label for="Saturdays" class="label label--secondary">Saturdays</label>
+      </li>
+      <li>
+        <input type="checkbox" class="checkbox--primary" id="Sundays" />
+        <label for="Sundays" class="label label--secondary">Sundays</label>
       </li>
     </ul>
 
     <label for="availableTime" class="label label--primary required"
       >Enter Available Times
     </label>
+    
     <input
       name="availableTime"
       id="availableTime"
@@ -48,22 +59,14 @@
       class="input input--primary"
       required
     />
+    
+    <select class="select-menu select-menu--primary input label--secondary" id="select-menu">
+      <option value="" selected disabled>Select a Timezone</option>
+      <option value="">1</option>
+      <option value="">1</option>
+      <option value="">1</option>
+    </select>
 
-    <label for="timezone" class="label label--primary required"
-      >Add Timezone</label
-    >
-    <input
-      name="timezone"
-      id="timezone"
-      placeholder="Ex. EST (Eastern Standard Time)"
-      class="input input--primary"
-      required
-    />
-
-    <input
-      type="submit"
-      value="Submit"
-      class="btn btn--primary block__submit-btn"
-    />
-  </div>
+    <input type="submit" value="Send" class="btn btn--primary block__submit-btn" />
+  </fieldset>
 </form>
