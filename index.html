@@ -27,8 +27,8 @@
         </p>
       </div>
 
-      <form action="POST" class="block__form">
-        <fieldset class="block block__form--primary">
+      <form action="POST" class="form">
+        <fieldset class="block">
 
           <label for="name" class="label label--primary required">Enter Full Name</label>
           <input name="name" id="name" placeholder="Ex. John Doe" class="input input--primary" required />
@@ -45,7 +45,7 @@
           <label for="weChatID" class="label label--primary">Enter WeChatID</label>
           <input name="weChatID" id="weChatID" placeholder="Ex. JohnDoe813" class="input input--primary" />
 
-          <ul class="checkbox block__form-checkbox">
+          <ul class="checkbox">
             <label class="label label--primary required">Select available time</label>
             <li>
               <input type="checkbox" class="checkbox--primary" id="Mondays" />
@@ -96,7 +96,7 @@
             <option value="">1</option>
           </select>
 
-          <input type="submit" value="Send" class="btn btn--primary block__form-btn" />
+          <input type="submit" value="Send" class="btn btn--primary" />
         </fieldset>
       </form>
     </section>
@@ -120,6 +120,7 @@
               <li class="list__item">Available on Sundays</li>
               <li class="list__item">Pacific Standard Time</li>
             </div>
+            <input type="submit" value="Pair" class="btn btn--primary" />
           </div>
         </div>
         <div class="card card--secondary">
@@ -128,22 +129,11 @@
           </header>
           <div class="card__body">
             <div class="list list--primary">
-              <li class="list__item">Tutor's Information</li>
+              <li class="list__item">Student's Information</li>
               <li class="list__item">Available on Sundays</li>
               <li class="list__item">Pacific Standard Time</li>
             </div>
-          </div>
-        </div>
-        <div class="card card--secondary">
-          <header class="card__header">
-            <h3>Jessenia Chen</h3>
-          </header>
-          <div class="card__body">
-            <div class="list list--primary">
-              <li class="list__item">Tutor's Information</li>
-              <li class="list__item">Available on Sundays</li>
-              <li class="list__item">Pacific Standard Time</li>
-            </div>
+            <input type="submit" value="Pair" class="btn btn--secondary" />
           </div>
         </div>
       </div>
