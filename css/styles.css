@@ -337,8 +337,8 @@ p {
 }
 
 .card__header {
-  padding-bottom: 3rem;
-  padding-top: 3rem;
+  padding: 3rem 0;
+  white-space: nowrap;
 }
 
 .card__body {

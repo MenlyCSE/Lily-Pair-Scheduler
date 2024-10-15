@@ -51,7 +51,7 @@ function displayCards() {
             cardContainer.innerHTML += `
                 <div class="card card--primary">
                     <header class="card__header">
-                      <h3>${person}</h3>
+                      <h3>${person.length > 15 ? person.slice(0, 10) + '...' : person}</h3>
                     </header>
                     <div class="card__body">
                       <div class="list list--primary">
