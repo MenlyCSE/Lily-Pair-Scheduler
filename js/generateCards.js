@@ -6,7 +6,7 @@ let data = {
         available: 'Mondays, Tuesdays, Fridays, and Sundays',
         timezone: 'Mountain Standard Time'
     },
-    'Jessenia Chen': {
+    'Jessenia Chan': {
         type: 'student',
         available: 'Sundays, Mondays, and Tuesday',
         timezone: 'Pacific Standard Time'
