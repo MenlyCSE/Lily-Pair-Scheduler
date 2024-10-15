@@ -30,10 +30,10 @@
       <form action="POST" class="form">
         <fieldset class="block">
 
-          <label for="name" class="label label--primary required">Enter Full Name</label>
-          <input name="name" id="name" placeholder="Ex. John Doe" class="input input--primary" required />
+          <label for="name" class="label label--primary required">Name</label>
+          <input name="name" id="name" placeholder="Ex. John" class="input input--primary" required />
 
-          <label for="email" class="label label--primary required">Enter Email</label>
+          <label for="email" class="label label--primary required">Email</label>
           <input
             name="email"
             id="email"
@@ -42,55 +42,19 @@
             required
           />
 
-          <label for="weChatID" class="label label--primary">Enter WeChatID</label>
+          <label for="weChatID" class="label label--primary">WeChatID</label>
           <input name="weChatID" id="weChatID" placeholder="Ex. JohnDoe813" class="input input--primary" />
 
-          <ul class="checkbox">
+          <ul class="checkbox" id="checkbox-menu">
             <label class="label label--primary required">Select available time</label>
-            <li>
-              <input type="checkbox" class="checkbox--primary" id="Mondays" />
-              <label for="Mondays" class="label label--secondary">Mondays</label>
-            </li>
-            <li>
-              <input type="checkbox" class="checkbox--primary" id="Tuesdays" />
-              <label for="Tuesdays" class="label label--secondary">Tuesdays</label>
-            </li>
-            <li>
-              <input type="checkbox" class="checkbox--primary" id="Wednesdays" />
-              <label for="Wednesdays" class="label label--secondary">Wednesdays</label>
-            </li>
-            <li>
-              <input type="checkbox" class="checkbox--primary" id="Thursdays" />
-              <label for="Thursdays" class="label label--secondary">Thursdays</label>
-            </li>
-            <li>
-              <input type="checkbox" class="checkbox--primary" id="Fridays" />
-              <label for="Fridays" class="label label--secondary">Fridays</label>
-            </li>
-            <li>
-              <input type="checkbox" class="checkbox--primary" id="Saturdays" />
-              <label for="Saturdays" class="label label--secondary">Saturdays</label>
-            </li>
-            <li>
-              <input type="checkbox" class="checkbox--primary" id="Sundays" />
-              <label for="Sundays" class="label label--secondary">Sundays</label>
-            </li>
           </ul>
 
-          <label for="availableTime" class="label label--primary required"
-            >Enter Available Times
+          <label for="select-menu" class="label label--primary required">
+            Choose timezone
           </label>
 
-          <input
-            name="availableTime"
-            id="availableTime"
-            placeholder="Ex. Fridays from 1 to 5 PM"
-            class="input input--primary"
-            required
-          />
-          
           <select class="select-menu select-menu--primary input label--secondary" id="select-menu">
-            <option value="" selected disabled>Select a Timezone</option>
+            <option value="" selected disabled>Timezones</option>
             <option value="">1</option>
             <option value="">1</option>
             <option value="">1</option>
@@ -112,5 +76,6 @@
       <div class="card-container" id="card-container"></div>
     </section>
      <script src="/js/generateCards.js"></script>
+     <script src="/js/generateDays.js"></script>
   </body>
 </html>
