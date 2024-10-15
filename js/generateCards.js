@@ -1,4 +1,5 @@
 let cardContainer = document.getElementById('card-container');
+
 let data = {
     'Abraham Lincoln': {
         type: 'tutor',
