@@ -1,5 +1,5 @@
 {
-  "name": "lilypair-scheduling-app",
+  "name": "lily-pair-scheduler",
   "version": "1.0.0",
   "description": "A lightweight microservice for EonEnglish; It matches tutors and students who share similar schedules",
   "main": "index.js",
