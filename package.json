@@ -1,0 +1,15 @@
+{
+  "name": "lilypair-scheduling-app",
+  "version": "1.0.0",
+  "description": "A lightweight microservice for EonEnglish; It matches tutors and students who share similar schedules",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "parcel-bundler": "^1.12.5"
+  }
+}
