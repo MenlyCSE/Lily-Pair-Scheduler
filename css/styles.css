@@ -103,7 +103,6 @@ p {
   color: var(--color-white);
   font-weight: 600;
   text-decoration: none;
-  text-transform: uppercase;
   transition: var(--transition-primary);
 }
 
@@ -298,8 +297,35 @@ p {
   font-weight: 500;
 }
 
+.list--secondary {
+  display: flex;
+  font-weight: 600;
+  gap: 3%;
+  justify-content: center;
+  margin-bottom: 0;
+  opacity: 40%;
+  white-space: nowrap;
+}
+
+.list--secondary li > a {
+  color: inherit;
+  text-decoration: none;
+  transition: all var(--transition-primary);
+}
+
+.list--secondary li > a:hover {
+  opacity: 50%;
+}
+
 .list__item {
   margin-bottom: 2rem;
+}
+
+@media screen and (max-width: 768px) {
+  .list--secondary {
+    flex-direction: column;
+    gap: 1rem;
+  }  
 }
 
 /* Cards */
@@ -385,3 +411,19 @@ p {
   }
 }
 
+/* Footer */
+.footer {
+  margin-top: 7rem;
+  text-align: center;
+}
+
+.footer--primary {
+  background: var(--color-blue-darker);
+  color: var(--color-white);
+}
+
+.footer__header {
+  font-weight: 700;
+  opacity: 90%;
+  white-space: nowrap;
+}
