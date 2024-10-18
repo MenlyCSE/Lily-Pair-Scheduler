@@ -124,9 +124,16 @@ p {
 .form .checkbox,
 .form .radiobox {
   list-style-type: none;
-  margin-bottom: 3rem;
   margin-top: 1rem;
   padding-left: 0;
+}
+
+.form .radiobox {
+  margin-bottom: 1.5rem;
+}
+
+.form .checkbox {
+  margin-bottom: 3rem;
 }
 
 @media screen and (min-width: 768px) {
@@ -137,7 +144,8 @@ p {
   }
 }
 
-/* Inputs, Labels, Buttons, Checkboxes, Select Menu */
+/* Inputs, Labels, Buttons, Checkboxes, 
+    Radioboxes, Select Menu */
 .btn,
 .input,
 .label,
