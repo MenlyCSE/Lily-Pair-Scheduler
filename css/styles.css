@@ -171,6 +171,11 @@ p {
   border-radius: var(--border-radius);
 }
 
+.checkbox--primary:checked,
+.radiobox--primary:checked {
+  accent-color: var(--color-accent);
+}
+
 /* Blocks */
 .block {
   padding: 3rem 3rem;
@@ -295,9 +300,6 @@ p {
   border: var(--color-accent) solid 1px;
   outline: var(--color-accent) solid 1px;
 }
-
-/* Radio Menu */
-
 
 /* Lists */
 .list {
