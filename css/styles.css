@@ -341,7 +341,7 @@ p {
   padding: 0 20%;
 }
 
-.filter-container option {
+.filter-container select {
   text-align: center;
 }
 
