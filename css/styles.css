@@ -333,6 +333,31 @@ p {
   }
 }
 
+/* Filters */
+.filter-container {
+  display: flex;
+  gap: 3rem;
+  margin-bottom: 4rem;
+  padding: 0 20%;
+}
+
+.filter-container option {
+  text-align: center;
+}
+
+@media screen and (max-width: 1024px) {
+  .filter-container {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .filter-container {
+    padding: 0;
+  }
+}
+
 /* Cards */
 .card {
   min-width: 20rem;
