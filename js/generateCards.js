@@ -1,4 +1,8 @@
 const cardContainer = document.getElementById('card-container');
+const timezone = document.getElementById('timezone-filter')
+const type = document.getElementById('type-filter')
+const available = document.getElementById('available-filter')
+
 const data = {
     'Abraham': {
         type: 'tutor',
