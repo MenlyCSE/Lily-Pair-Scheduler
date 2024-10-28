@@ -66,7 +66,7 @@ function displayFilterMenu() {
     
     timezone.innerHTML += timezoneFilter;
     type.innerHTML += typeFilter;
-    available.innerHTML += typeFilter;
+    available.innerHTML += availableFilter;
 }
 
 displayRadioMenu();
