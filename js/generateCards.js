@@ -3,7 +3,7 @@ const timezone = document.getElementById('timezone-filter');
 const type = document.getElementById('type-filter');
 const available = document.getElementById('available-filter');
 
-// 
+// Method: organize into object, include fetch/post functions, etc
 async function fetchSheetData() {
     try {
         const webAppURL = `https://script.google.com/macros/s/AKfycbwUDAAIYTwGhtEh6EgoWce7aAxUFXO35DyUorX_4yG2kZzlO-CzxUBx8op50mKIBpo/exec`;
