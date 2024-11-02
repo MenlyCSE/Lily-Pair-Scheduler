@@ -1,7 +1,22 @@
 const cardContainer = document.getElementById('card-container');
-const timezone = document.getElementById('timezone-filter')
-const type = document.getElementById('type-filter')
-const available = document.getElementById('available-filter')
+const timezone = document.getElementById('timezone-filter');
+const type = document.getElementById('type-filter');
+const available = document.getElementById('available-filter');
+
+// 
+async function fetchSheetData() {
+    try {
+        const webAppURL = `https://script.google.com/macros/s/AKfycbwUDAAIYTwGhtEh6EgoWce7aAxUFXO35DyUorX_4yG2kZzlO-CzxUBx8op50mKIBpo/exec`;
+        const response = await fetch(webAppURL);
+        const data = await response.json();
+
+        console.log(data);
+    } catch (error) {
+        console.log(error);
+    }
+}
+
+fetchSheetData(); 
 
 const data = {
     'Abraham': {
