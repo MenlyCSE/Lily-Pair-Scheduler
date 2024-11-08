@@ -4,7 +4,7 @@ const type = document.getElementById('type-filter');
 const available = document.getElementById('available-filter');
 
 function displayTutorCard(name, type, availability, timezone) {
-    return cardContainer.innerHTML += `
+  return cardContainer.innerHTML += `
         <div class="card card--primary">
             <header class="card__header">
               <h3>${name}</h3>
@@ -21,7 +21,7 @@ function displayTutorCard(name, type, availability, timezone) {
 }
 
 function displayStudentCard(name, type, availability, timezone) {
-    return cardContainer.innerHTML += `
+  return cardContainer.innerHTML += `
         <div class="card card--secondary">
             <header class="card__header">
               <h3>${name}</h3>
@@ -38,33 +38,40 @@ function displayStudentCard(name, type, availability, timezone) {
 }
 
 async function fetchSheetData() {
-    try {
-        const webAppURL = `https://script.google.com/macros/s/AKfycbwUDAAIYTwGhtEh6EgoWce7aAxUFXO35DyUorX_4yG2kZzlO-CzxUBx8op50mKIBpo/exec`;
-        const response = await fetch(webAppURL);
-        const data = await response.json();
+  const webAppURL = `https://script.google.com/macros/s/AKfycbwUDAAIYTwGhtEh6EgoWce7aAxUFXO35DyUorX_4yG2kZzlO-CzxUBx8op50mKIBpo/exec`;
 
-        for (let i = 0; i < data.length; i++) {
-            let name = data[i][0];
-            let email = data[i][1];
-            let weChatID = data[i][2];
-            let type = data[i][3];
-            let availability = data[i][4];
-            let timezone = data[i][5];
+  try {
+    const response = await fetch(webAppURL);
+    const data = await response.json();
 
-            if (type === 'Student') {
-                displayStudentCard(name, type, availability, timezone);
-            }
+    return data;
 
-            if (type == 'Tutor') {
-                displayTutorCard(name, type, availability, timezone);
-            }
-        }
-
-    } catch (error) {
-        console.log(error);
-    }
+  } catch (error) {
+    console.log(error);
+  }
 }
 
-fetchSheetData();
+async function dataObject(index) {
+  const data = await fetchSheetData();
+
+  const object = {
+    name: data[index][0],
+    email: data[index][1],
+    weChatID: data[index][2],
+    type: data[index][3],
+    availability: data[index][4],
+    timezone: data[index][5],
+  }
+
+  return object; 
+}
 
 
+
+
+
+// if (type === 'Student')
+//   displayStudentCard(name, type, availability, timezone);
+
+// if (type == 'Tutor')
+//   displayTutorCard(name, type, availability, timezone);
