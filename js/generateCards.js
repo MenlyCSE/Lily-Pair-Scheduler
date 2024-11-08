@@ -3,7 +3,7 @@ const timezone = document.getElementById('timezone-filter');
 const type = document.getElementById('type-filter');
 const available = document.getElementById('available-filter');
 
-function displayTutorCard(name, type, availability, timezone) {
+function showTutorCard(name, type, availability, timezone) {
   return cardContainer.innerHTML += `
         <div class="card card--primary">
             <header class="card__header">
@@ -20,7 +20,7 @@ function displayTutorCard(name, type, availability, timezone) {
         </div>`;
 }
 
-function displayStudentCard(name, type, availability, timezone) {
+function showStudentCard(name, type, availability, timezone) {
   return cardContainer.innerHTML += `
         <div class="card card--secondary">
             <header class="card__header">
@@ -66,12 +66,19 @@ async function dataObject(index) {
   return object; 
 }
 
+async function displayCards() {
+  const dataLength = (await fetchSheetData()).length;
 
+  for (let i = 0; i < dataLength; i++) {
+    let person = await dataObject(i);
+    const { name, type, availability, timezone } = person;
+    
+    if (type == 'Student')
+      showStudentCard(name, type, availability, timezone);
 
+    if (type == 'Tutor')
+      showTutorCard(name, type, availability, timezone);
+  }
+}
 
-
-// if (type === 'Student')
-//   displayStudentCard(name, type, availability, timezone);
-
-// if (type == 'Tutor')
-//   displayTutorCard(name, type, availability, timezone);
+displayCards();
