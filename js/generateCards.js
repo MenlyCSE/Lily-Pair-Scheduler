@@ -1,10 +1,10 @@
-const cardContainer = document.getElementById('card-container');
-const timezone = document.getElementById('timezone-filter');
-const type = document.getElementById('type-filter');
-const available = document.getElementById('available-filter');
+const cardContainerElement = document.getElementById('card-container');
+const timezoneElement = document.getElementById('timezone-filter');
+const typeElement = document.getElementById('type-filter');
+const availabilityElement = document.getElementById('available-filter');
 
 function showTutorCard(name, type, availability, timezone) {
-  return cardContainer.innerHTML += `
+  return cardContainerElement.innerHTML += `
         <div class="card card--primary">
             <header class="card__header">
               <h3>${name}</h3>
@@ -21,7 +21,7 @@ function showTutorCard(name, type, availability, timezone) {
 }
 
 function showStudentCard(name, type, availability, timezone) {
-  return cardContainer.innerHTML += `
+  return cardContainerElement.innerHTML += `
         <div class="card card--secondary">
             <header class="card__header">
               <h3>${name}</h3>
@@ -67,6 +67,36 @@ async function dataObject(index) {
   return object; 
 }
 
+let timezoneList = [];
+let typeList = [];
+let availableList = [];
+
+async function displayFilterMenu() {
+  const dataLength = (await fetchSheetData()).length;
+
+  for (let i = 0; i < dataLength; i++) {
+    let person = await dataObject(i);
+    const { type, availability, timezone } = person;
+
+    timezoneList[i] = timezone;
+    availableList[i] = availability;
+    typeList[i] = type;
+  }
+
+  timezoneElement.innerHTML += timezoneList.map(zone => `
+    <option value="${zone}">${zone}</option>
+  `).join('');
+
+  availabilityElement.innerHTML += availableList.map(time => `
+    <option value="${time}">${time}</option>
+  `).join('')
+
+  typeElement.innerHTML += typeList.map(type => `
+    <option value="${type}">${type}</option>
+  `).join('')
+}
+
+
 async function displayCards() {
   const dataLength = (await fetchSheetData()).length;
 
@@ -82,4 +112,9 @@ async function displayCards() {
   }
 }
 
-displayCards();
+async function initialize() {
+  displayFilterMenu();
+  displayCards();
+}
+
+initialize();

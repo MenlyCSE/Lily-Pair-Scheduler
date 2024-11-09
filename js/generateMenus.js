@@ -1,4 +1,3 @@
-// temporarily here until database...
 let types = ['Tutor', 'Student'];
 let days = [
     'Mondays', 'Tuesdays', 'Wednesdays',
@@ -47,28 +46,5 @@ function displayRadioMenu() {
     radioMenu.innerHTML += radioMenuItems;
 }
 
-function displayFilterMenu() {
-    const timezone = document.getElementById('timezone-filter');
-    const type = document.getElementById('type-filter');
-    const available = document.getElementById('available-filter')
-
-    const timezoneFilter = timezones.map(timezone => `
-            <option value="${timezone}">${timezone}</option>
-        `).join('');
-
-    const typeFilter = types.map(type => `
-            <option value="${type}">${type}</option>
-        `).join('');
-
-    const availableFilter = days.map(day => `
-            <option value="${day}">${day}</option>
-        `).join('');
-    
-    timezone.innerHTML += timezoneFilter;
-    type.innerHTML += typeFilter;
-    available.innerHTML += availableFilter;
-}
-
 displayRadioMenu();
 displaySelectMenu();
-displayFilterMenu();
