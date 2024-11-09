@@ -38,8 +38,7 @@ function showStudentCard(name, type, availability, timezone) {
 }
 
 async function fetchSheetData() {
-  const sheetID = `AKfycbwUDAAIYTwGhtEh6EgoWce7aAxUFXO35DyUorX_4yG2kZzlO-CzxUBx8op50mKIBpo`;
-  const webAppURL = `https://script.google.com/macros/s/${sheetID}/exec`;
+  const webAppURL = `https://script.google.com/macros/s/AKfycbwUDAAIYTwGhtEh6EgoWce7aAxUFXO35DyUorX_4yG2kZzlO-CzxUBx8op50mKIBpo/exec`;
 
   try {
     const response = await fetch(webAppURL);
