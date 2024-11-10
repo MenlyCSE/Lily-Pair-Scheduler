@@ -29,25 +29,25 @@ async function displayCardFilter() {
     'Student', 'Tutor'
   ];
 
+  let timezoneHtml = '';
   let timezoneList = [...new Set(
     peopleData.map(person => person.timezone)
   )];
 
+  let availableHtml = '';
   let availableList = [...new Set(
     peopleData.map(person => person.availability)
   )];
 
-  timezoneElement.innerHTML += timezoneList.map(zone => `
-    <option value="${zone}">${zone}</option>
-  `).join('');
+  for (let i = 1; i < timezoneList.length; i++)
+    timezoneHtml += `<option value="${timezoneList[i]}">${timezoneList[i]}</option>`;
 
-  availabilityElement.innerHTML += availableList.map(time => `
-    <option value="${time}">${time}</option>
-  `).join('');
+  for (let i = 1; i < availableList.length; i++)
+    availableHtml += `<option value="${availableList[i]}">${availableList[i]}</option>`;
 
-  typeElement.innerHTML += typeList.map(type => `
-    <option value="${type}">${type}</option>
-  `).join('');
+  timezoneElement.innerHTML += timezoneHtml;
+  availabilityElement.innerHTML += availableHtml;
+  typeElement.innerHTML += typeList.map(type => `<option value="${type}">${type}</option>`);
 }
 
 async function displayCards() {
