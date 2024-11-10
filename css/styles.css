@@ -416,6 +416,25 @@ p {
   background: var(--color-accent);
 }
 
+.card--loading {
+  background: var(--color-white);
+  min-height: 30rem;
+}
+
+.card--loading .card__header {
+  padding: 7rem;
+  animation: loadingCard 1.5s ease-in-out infinite alternate;
+}
+
+@keyframes loadingCard {
+  from {
+    background-color: var(--color-blue-normal);
+  }
+  to {
+    background-color: var(--color-accent);
+  }
+}
+
 @media screen and (min-width: 768px) {
   .card {
     width: 35rem;
