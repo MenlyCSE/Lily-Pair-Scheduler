@@ -1,3 +1,5 @@
+const cardContainer = document.getElementById('card-container');
+
 function showTutorCard(name, type, availability, timezone) {
   return `
       <div class="card card--primary">
@@ -32,4 +34,18 @@ function showStudentCard(name, type, availability, timezone) {
       </div>`;
 }
 
-export { showTutorCard, showStudentCard };
+function loadingCards() {
+  let amount = 8;
+  let cardHtml = '';
+  for (let i = 0; i < amount; i++) {
+    cardHtml += `
+      <div class="card card--primary card--loading">
+        <header class="card__header"></header>
+        <div class="card__body"></div>
+      </div>`;
+  }
+  
+  cardContainer.innerHTML = cardHtml;
+}
+
+export { showTutorCard, showStudentCard, loadingCards };

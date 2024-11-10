@@ -418,12 +418,12 @@ p {
 
 .card--loading {
   background: var(--color-white);
-  min-height: 30rem;
+  min-height: 35rem;
 }
 
 .card--loading .card__header {
-  padding: 7rem;
   animation: loadingCard 1.5s ease-in-out infinite alternate;
+  padding: 6rem;
 }
 
 @keyframes loadingCard {

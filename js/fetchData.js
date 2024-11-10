@@ -15,7 +15,6 @@ async function fetchSheetData() {
 
 async function dataObject(index) {
     const data = await fetchSheetData();
-
     const object = {
         name: data[index][0],
         email: data[index][1],

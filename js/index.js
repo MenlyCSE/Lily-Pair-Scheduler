@@ -1,3 +1,4 @@
+import { loadingCards } from "./cardTemplates.js";
 import { displayCardFilter, displayCards } from "./generateCards.js";
 import {
     displayDaySelectMenu,
@@ -6,6 +7,7 @@ import {
 } from "./generateMenus.js";
 
 async function initialize() {
+    loadingCards();
     displayCards();
     displayCardFilter();
     displayDaySelectMenu();

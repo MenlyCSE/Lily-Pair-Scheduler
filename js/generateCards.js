@@ -19,9 +19,10 @@ async function displayCardFilter() {
   let data = await fetchDataOnce();
   let dataLength = data.length;
 
-  if (promises.length === 0)
+  if (promises.length === 0) {
     for (let i = 0; i < dataLength; i++)
       promises[i] = dataObject(i);
+  }
 
   let peopleData = await Promise.all(promises);
   
@@ -39,15 +40,21 @@ async function displayCardFilter() {
     peopleData.map(person => person.availability)
   )];
 
-  for (let i = 1; i < timezoneList.length; i++)
-    timezoneHtml += `<option value="${timezoneList[i]}">${timezoneList[i]}</option>`;
+  for (let i = 1; i < timezoneList.length; i++) {
+    timezoneHtml += `
+      <option value="${timezoneList[i]}">${timezoneList[i]}</option>`;
+  }
 
-  for (let i = 1; i < availableList.length; i++)
-    availableHtml += `<option value="${availableList[i]}">${availableList[i]}</option>`;
+  for (let i = 1; i < availableList.length; i++) {
+    availableHtml += `
+      <option value="${availableList[i]}">${availableList[i]}</option>`;
+  }
 
   timezoneElement.innerHTML += timezoneHtml;
   availabilityElement.innerHTML += availableHtml;
-  typeElement.innerHTML += typeList.map(type => `<option value="${type}">${type}</option>`);
+  typeElement.innerHTML += typeList.map(
+    type => `<option value="${type}">${type}</option>`
+  );
 }
 
 async function displayCards() {
@@ -55,9 +62,10 @@ async function displayCards() {
   let dataLength = data.length;
   let cardHtml = '';
 
-  if (promises.length === 0)
+  if (promises.length === 0) {
     for (let i = 0; i < dataLength; i++)
       promises[i] = dataObject(i);
+  }
 
   let peopleData = await Promise.all(promises);
   for (let i = 0; i < dataLength; i++) {
