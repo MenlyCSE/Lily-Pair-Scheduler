@@ -5,6 +5,7 @@ const cardContainerElement = document.getElementById('card-container');
 const timezoneElement = document.getElementById('timezone-filter');
 const typeElement = document.getElementById('type-filter');
 const availabilityElement = document.getElementById('available-filter');
+const filterElement = document.getElementById('filter-container');
 
 let cachedData = null;
 async function fetchDataOnce() {
@@ -25,7 +26,7 @@ async function displayCardFilter() {
   }
 
   let peopleData = await Promise.all(promises);
-  
+
   let typeList = [
     'Student', 'Tutor'
   ];
@@ -68,6 +69,7 @@ async function displayCards() {
   }
 
   let peopleData = await Promise.all(promises);
+
   for (let i = 0; i < dataLength; i++) {
     let person = peopleData[i];
     let { name, type, availability, timezone } = person;
@@ -75,11 +77,63 @@ async function displayCards() {
     if (type == 'Student')
       cardHtml += showStudentCard(name, type, availability, timezone);
 
-    if (type == 'Tutor' )
+    if (type == 'Tutor')
       cardHtml += showTutorCard(name, type, availability, timezone);
   }
 
   cardContainerElement.innerHTML = cardHtml;
 }
+
+let peopleDataCopy = {
+  timezoneField: [],
+  typeField: [],
+  availabilityField: []
+};
+
+async function updateDisplayCards(element) {
+  let data = await fetchDataOnce();
+  let dataLength = data.length;
+  let cardHtml = '';
+
+  peopleDataCopy = {
+    timezoneField: [],
+    typeField: [],
+    availabilityField: []
+  };
+
+  if (promises.length === 0) {
+    for (let i = 0; i < dataLength; i++)
+      promises[i] = dataObject(i);
+  }
+
+  let peopleData = await Promise.all(promises);
+
+  for (let i = 0; i < dataLength; i++) {
+    let person = peopleData[i];
+    let { name, type, availability, timezone } = person;
+
+    if (type == 'Student' && timezone == element.value) {
+      cardHtml += showStudentCard(name, type, availability, timezone);
+      (peopleDataCopy.timezoneField).push(timezone);
+      (peopleDataCopy.typeField).push(type);
+      (peopleDataCopy.availabilityField).push(availability);
+    }
+
+    if (type == 'Tutor' && timezone == element.value) {
+      cardHtml += showTutorCard(name, type, availability, timezone);
+      (peopleDataCopy.timezoneField).push(timezone);
+      (peopleDataCopy.typeField).push(type);
+      (peopleDataCopy.availabilityField).push(availability);
+    }
+  }
+
+  console.log(peopleDataCopy);
+
+  cardContainerElement.innerHTML = cardHtml;
+}
+
+timezoneElement.addEventListener('change', () => {
+  updateDisplayCards(timezoneElement);
+});
 
 export { displayCardFilter, displayCards };
