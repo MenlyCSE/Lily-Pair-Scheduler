@@ -5,7 +5,6 @@ const cardContainerElement = document.getElementById('card-container');
 const timezoneElement = document.getElementById('timezone-filter');
 const typeElement = document.getElementById('type-filter');
 const availabilityElement = document.getElementById('available-filter');
-const filterElement = document.getElementById('filter-container');
 
 let cachedData = null;
 async function fetchDataOnce() {
@@ -84,22 +83,12 @@ async function displayCards() {
   cardContainerElement.innerHTML = cardHtml;
 }
 
-let peopleDataCopy = {
-  timezoneField: [],
-  typeField: [],
-  availabilityField: []
-};
-
-async function updateDisplayCards(element) {
+async function filterDisplayCards() {
   let data = await fetchDataOnce();
   let dataLength = data.length;
-  let cardHtml = '';
-
-  peopleDataCopy = {
-    timezoneField: [],
-    typeField: [],
-    availabilityField: []
-  };
+  let selectedTimezone = timezoneElement.value;
+  let selectedType = typeElement.value;
+  let selectedAvailability = availabilityElement.value;
 
   if (promises.length === 0) {
     for (let i = 0; i < dataLength; i++)
@@ -108,32 +97,49 @@ async function updateDisplayCards(element) {
 
   let peopleData = await Promise.all(promises);
 
-  for (let i = 0; i < dataLength; i++) {
-    let person = peopleData[i];
+  let filteredData = peopleData.filter(person => {
+    let matchTimezone = true;
+    let matchType = true;
+    let matchAvailability = true;
+
+    if (selectedTimezone && (person.timezone !== selectedTimezone))
+      matchTimezone = false;
+
+    if (selectedType && (person.type !== selectedType))
+      matchType = false;
+
+    if (selectedAvailability && (person.availability !== selectedAvailability))
+      matchAvailability = false;
+
+    return matchTimezone && matchType && matchAvailability;
+  });
+
+  let cardHtml = '';
+  for (let i = 0; i < filteredData.length; i++) {
+    let person = filteredData[i];
     let { name, type, availability, timezone } = person;
 
-    if (type == 'Student' && timezone == element.value) {
+    if (type == 'Student')
       cardHtml += showStudentCard(name, type, availability, timezone);
-      (peopleDataCopy.timezoneField).push(timezone);
-      (peopleDataCopy.typeField).push(type);
-      (peopleDataCopy.availabilityField).push(availability);
-    }
 
-    if (type == 'Tutor' && timezone == element.value) {
+    if (type == 'Tutor')
       cardHtml += showTutorCard(name, type, availability, timezone);
-      (peopleDataCopy.timezoneField).push(timezone);
-      (peopleDataCopy.typeField).push(type);
-      (peopleDataCopy.availabilityField).push(availability);
-    }
   }
-
-  console.log(peopleDataCopy);
 
   cardContainerElement.innerHTML = cardHtml;
 }
 
 timezoneElement.addEventListener('change', () => {
-  updateDisplayCards(timezoneElement);
+  filterDisplayCards();
 });
+
+typeElement.addEventListener('change', () => {
+  filterDisplayCards();
+});
+
+availabilityElement.addEventListener('change', () => {
+  filterDisplayCards();
+});
+
 
 export { displayCardFilter, displayCards };
