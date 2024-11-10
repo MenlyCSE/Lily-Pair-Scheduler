@@ -1,29 +1,26 @@
-name: Deploy Google Sheets Data Fetcher
+name: Deploy Workflow
 
 on:
   push:
     branches:
-      - main 
-  workflow_dispatch: 
+      - main
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
-
+    env:
+      SECRET_KEY: ${{ secrets.SECRET_SHEET_KEY }}  # Make the secret available
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v2
+      - name: Checkout code
+        uses: actions/checkout@v3  # Update to v3
 
       - name: Set up Node.js
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v3  # Update to v3
         with:
-          node-version: "14" 
+          node-version: '16'  # Ensure you are using Node 16
 
       - name: Install dependencies
-        run: npm install 
+        run: npm install
 
-      - name: Run the script to fetch sheet data
-        run: node fetchData.js 
-
-        env:
-          SECRET_KEY: ${{ secrets.SECRET_SHEET_KEY }} 
+      - name: Build with Parcel
+        run: parcel build index.html --no-source-maps

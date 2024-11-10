@@ -1,5 +1,6 @@
+const sheetID = process.env.SECRET_KEY;
+
 async function fetchSheetData() {
-    const sheetID = process.env.SECRET_SHEET_KEY;
     const webAppURL = `https://script.google.com/macros/s/${sheetID}/exec`;
 
     try {
