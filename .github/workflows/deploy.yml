@@ -9,15 +9,15 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     env:
-      SECRET_KEY: ${{ secrets.SECRET_SHEET_KEY }}  # Make the secret available
+      SECRET_KEY: ${{ secrets.SECRET_SHEET_KEY }} 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3  # Version 3 for actions/checkout
+        uses: actions/checkout@v3  
 
       - name: Set up Node.js 20
-        uses: actions/setup-node@v3  # Version 3 for actions/setup-node
+        uses: actions/setup-node@v3  
         with:
-          node-version: '20'  # Explicitly using Node 20
+          node-version: '20'  
 
       - name: Install dependencies
         run: npm install

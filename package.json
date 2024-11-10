@@ -2,7 +2,7 @@
   "name": "lily-pair-scheduler",
   "version": "1.0.0",
   "description": "A lightweight microservice for EonEnglish; It matches tutors and students who share similar schedules",
-  "main": "index.js",
+  "main": "index.html",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
