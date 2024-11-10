@@ -34,7 +34,7 @@ function showStudentCard(name, type, availability, timezone) {
       </div>`;
 }
 
-function loadingCards() {
+function showLoadingCards() {
   let amount = 8;
   let cardHtml = '';
   for (let i = 0; i < amount; i++) {
@@ -48,4 +48,4 @@ function loadingCards() {
   cardContainer.innerHTML = cardHtml;
 }
 
-export { showTutorCard, showStudentCard, loadingCards };
+export { showTutorCard, showStudentCard, showLoadingCards };
