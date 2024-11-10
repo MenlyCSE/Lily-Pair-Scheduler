@@ -6,11 +6,11 @@ import {
 } from "./generateMenus.js";
 
 async function initialize() {
-    displayCards();
+    // displayCards();
     displayCardFilter();
-    displayDaySelectMenu();
-    displayTypeRadioMenu();
-    displayTimezoneMenu();
+    // displayDaySelectMenu();
+    // displayTypeRadioMenu();
+    // displayTimezoneMenu();
 }
 
-// initialize();
+initialize();

@@ -6,7 +6,7 @@ const typeElement = document.getElementById('type-filter');
 const availabilityElement = document.getElementById('available-filter');
 
 function showTutorCard(name, type, availability, timezone) {
-  return cardContainerElement.innerHTML += `
+  return `
         <div class="card card--primary">
             <header class="card__header">
               <h3>${name}</h3>
@@ -23,7 +23,7 @@ function showTutorCard(name, type, availability, timezone) {
 }
 
 function showStudentCard(name, type, availability, timezone) {
-  return cardContainerElement.innerHTML += `
+  return `
         <div class="card card--secondary">
             <header class="card__header">
               <h3>${name}</h3>
@@ -39,49 +39,67 @@ function showStudentCard(name, type, availability, timezone) {
         </div>`;
 }
 
-let timezoneList = [];
-let typeList = [];
-let availableList = [];
+let cachedData = null;
+async function fetchDataOnce() {
+  if (!cachedData)
+    cachedData = await fetchSheetData();
 
+  return cachedData;
+}
+
+let promises = [];
 async function displayCardFilter() {
-  const dataLength = (await fetchSheetData()).length;
+  let data = await fetchDataOnce();
+  let dataLength = data.length;
 
-  for (let i = 0; i < dataLength; i++) {
-    let person = await dataObject(i);
-    const { type, availability, timezone } = person;
+  if (promises.length === 0)
+    for (let i = 0; i < dataLength; i++)
+      promises[i] = dataObject(i);
 
-    timezoneList[i] = timezone;
-    availableList[i] = availability;
-    typeList[i] = type;
-  }
+  let peopleData = await Promise.all(promises);
+  
+  let timezoneList = [...new Set(
+    peopleData.map(value => value.timezone)
+  )];
 
-  timezoneElement.innerHTML += timezoneList.map(zone => `
-    <option value="${zone}">${zone}</option>
-  `).join('');
+  console.log(timezoneList);
+  
 
-  availabilityElement.innerHTML += availableList.map(time => `
-    <option value="${time}">${time}</option>
-  `).join('')
+  // // O(n)
+  // timezoneElement.innerHTML = timezoneList.map(zone => `
+  //   <option value="${zone}">${zone}</option>
+  // `).join('');
 
-  typeElement.innerHTML += typeList.map(type => `
-    <option value="${type}">${type}</option>
-  `).join('')
+  // // O(n)
+  // availabilityElement.innerHTML = availableList.map(time => `
+  //   <option value="${time}">${time}</option>
+  // `).join('')
+
+  // // O(n)
+  // typeElement.innerHTML = typeList.map(type => `
+  //   <option value="${type}">${type}</option>
+  // `).join('')
 }
 
 
+
+
 async function displayCards() {
-  const dataLength = (await fetchSheetData()).length;
+  const dataLength = (await fetchDataOnce()).length;
+  let cardHtml = '';
 
   for (let i = 0; i < dataLength; i++) {
     let person = await dataObject(i);
     const { name, type, availability, timezone } = person;
     
     if (type == 'Student')
-      showStudentCard(name, type, availability, timezone);
+      cardHtml += showStudentCard(name, type, availability, timezone);
 
     if (type == 'Tutor')
-      showTutorCard(name, type, availability, timezone);
+      cardHtml += showTutorCard(name, type, availability, timezone);
   }
+
+  cardContainerElement.innerHTML = cardHtml;
 }
 
 export { displayCardFilter, displayCards };
