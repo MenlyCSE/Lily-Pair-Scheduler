@@ -1,10 +1,15 @@
+let cachedData = null;
 async function fetchSheetData() {
     const sheetID = `AKfycbwUDAAIYTwGhtEh6EgoWce7aAxUFXO35DyUorX_4yG2kZzlO-CzxUBx8op50mKIBpo`;
     const webAppURL = `https://script.google.com/macros/s/${sheetID}/exec`;
 
+    if (cachedData)
+        return cachedData;
+
     try {
         const response = await fetch(webAppURL);
         const data = await response.json();
+        cachedData = data;
 
         return data;
 
