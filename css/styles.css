@@ -271,6 +271,18 @@ p {
   transform: scale(1.05);
 }
 
+.filter__btn {
+  margin: 0;
+  width: 100%;
+  padding: 1rem;
+  min-width: 0;
+  background: var(--color-blue-dark);
+}
+
+.filter__btn:hover {
+  transform: scale(0.95);
+}
+
 /* Checkboxes */
 .checkbox--primary:checked {
   border: none;

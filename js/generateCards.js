@@ -5,6 +5,7 @@ const cardContainerElement = document.getElementById('card-container');
 const timezoneElement = document.getElementById('timezone-filter');
 const typeElement = document.getElementById('type-filter');
 const availabilityElement = document.getElementById('available-filter');
+const clearFilterBtn = document.getElementById('clear-filter');
 
 let cachedData = null;
 async function fetchDataOnce() {
@@ -129,17 +130,16 @@ async function filterDisplayCards() {
   cardContainerElement.innerHTML = cardHtml;
 }
 
-timezoneElement.addEventListener('change', () => {
-  filterDisplayCards();
-});
+timezoneElement.addEventListener('change', () => filterDisplayCards());
+typeElement.addEventListener('change', () => filterDisplayCards());
+availabilityElement.addEventListener('change', () => filterDisplayCards());
 
-typeElement.addEventListener('change', () => {
-  filterDisplayCards();
+clearFilterBtn.addEventListener('click', () => {
+  timezoneElement.value = '';
+  typeElement.value = '';
+  availabilityElement.value = '';
+  
+  displayCards();
 });
-
-availabilityElement.addEventListener('change', () => {
-  filterDisplayCards();
-});
-
 
 export { displayCardFilter, displayCards };
