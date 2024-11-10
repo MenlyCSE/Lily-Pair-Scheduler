@@ -1,0 +1,29 @@
+name: Deploy Google Sheets Data Fetcher
+
+on:
+  push:
+    branches:
+      - main 
+  workflow_dispatch: 
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: "14" 
+
+      - name: Install dependencies
+        run: npm install 
+
+      - name: Run the script to fetch sheet data
+        run: node fetchData.js 
+
+        env:
+          SECRET_KEY: ${{ secrets.SECRET_SHEET_KEY }} 
