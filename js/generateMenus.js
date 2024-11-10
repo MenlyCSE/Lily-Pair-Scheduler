@@ -1,9 +1,17 @@
-let types = ['Tutor', 'Student'];
+const checkboxMenu = document.getElementById('checkbox-menu');
+const radioMenu = document.getElementById('radio-menu');
+const selectMenu = document.getElementById(`select-menu`);
+
+let types = [
+    'Tutor', 'Student'
+];
+
 let days = [
     'Mondays', 'Tuesdays', 'Wednesdays',
     'Thursdays', 'Fridays', 'Saturdays',
     'Sundays'
 ];
+
 let timezones = [
     "Eastern Standard Time (EST)", "Central Standard Time (CST)",
     "Mountain Standard Time (MST)", "Pacific Standard Time (PST)",
@@ -12,11 +20,10 @@ let timezones = [
     "Brasilia Time (BRT)", "Moscow Standard Time (MSK)",
     "South Africa Standard Time (SAST)", "China Standard Time (CST)",
     "New Zealand Standard Time (NZST)", "India Standard Time (IST)",
-    "Singapore Standard Time (SGT)",  "Hong Kong Time (HKT)"
+    "Singapore Standard Time (SGT)", "Hong Kong Time (HKT)"
 ];
 
-function displaySelectMenu() {
-    const checkboxMenu = document.getElementById('checkbox-menu');
+function displayDaySelectMenu() {
     const checkBoxItems = days.map(day => `
         <li>
             <input type="checkbox" class="checkbox--primary" id="${day}" />
@@ -27,8 +34,7 @@ function displaySelectMenu() {
     checkboxMenu.innerHTML += checkBoxItems;
 }
 
-function displayRadioMenu() {
-    const radioMenu = document.getElementById('radio-menu')
+function displayTypeRadioMenu() {
     const radioMenuItems = types.map(type => `
         <li>
             <input 
@@ -46,5 +52,13 @@ function displayRadioMenu() {
     radioMenu.innerHTML += radioMenuItems;
 }
 
-displayRadioMenu();
-displaySelectMenu();
+function displayTimezoneMenu() {
+    const result = timezones
+        .map(zone => `<option value="${zone}">${zone}</option>`)
+        .join('');
+
+    selectMenu.innerHTML += result;
+}
+
+
+export { displayDaySelectMenu, displayTypeRadioMenu, displayTimezoneMenu };
