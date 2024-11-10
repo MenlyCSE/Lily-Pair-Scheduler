@@ -57,28 +57,30 @@ async function displayCardFilter() {
       promises[i] = dataObject(i);
 
   let peopleData = await Promise.all(promises);
-  
+
   let timezoneList = [...new Set(
-    peopleData.map(value => value.timezone)
+    peopleData.map(person => person.timezone)
   )];
 
-  console.log(timezoneList);
-  
+  let typeList = [...new Set(
+    peopleData.map(person => person.type)
+  )];
 
-  // // O(n)
-  // timezoneElement.innerHTML = timezoneList.map(zone => `
-  //   <option value="${zone}">${zone}</option>
-  // `).join('');
+  let availableList = [...new Set(
+    peopleData.map(person => person.availability)
+  )];
 
-  // // O(n)
-  // availabilityElement.innerHTML = availableList.map(time => `
-  //   <option value="${time}">${time}</option>
-  // `).join('')
+  timezoneElement.innerHTML = timezoneList.map(zone => `
+    <option value="${zone}">${zone}</option>
+  `).join('');
 
-  // // O(n)
-  // typeElement.innerHTML = typeList.map(type => `
-  //   <option value="${type}">${type}</option>
-  // `).join('')
+  availabilityElement.innerHTML = availableList.map(time => `
+    <option value="${time}">${time}</option>
+  `).join('');
+
+  typeElement.innerHTML = typeList.map(type => `
+    <option value="${type}">${type}</option>
+  `).join('');
 }
 
 
