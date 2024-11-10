@@ -1,8 +1,16 @@
-import { displaySelectMenu, displayRadioMenu } from "./generateMenus.js";
+import { displayCardFilter, displayCards } from "./generateCards.js";
+import {
+    displayDaySelectMenu,
+    displayTypeRadioMenu,
+    displayTimezoneMenu
+} from "./generateMenus.js";
 
 async function initialize() {
-    displaySelectMenu();
-    displayRadioMenu();
+    displayCards();
+    displayCardFilter();
+    displayDaySelectMenu();
+    displayTypeRadioMenu();
+    displayTimezoneMenu();
 }
 
-initialize();
+// initialize();
