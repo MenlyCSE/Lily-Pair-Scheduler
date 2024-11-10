@@ -12,12 +12,12 @@ jobs:
       SECRET_KEY: ${{ secrets.SECRET_SHEET_KEY }}  # Make the secret available
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3  # Update to v3
+        uses: actions/checkout@v3  # Version 3 for actions/checkout
 
-      - name: Set up Node.js
-        uses: actions/setup-node@v3  # Update to v3
+      - name: Set up Node.js 20
+        uses: actions/setup-node@v3  # Version 3 for actions/setup-node
         with:
-          node-version: '16'  # Ensure you are using Node 16
+          node-version: '20'  # Explicitly using Node 20
 
       - name: Install dependencies
         run: npm install
