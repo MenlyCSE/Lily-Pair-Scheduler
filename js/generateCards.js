@@ -1,43 +1,10 @@
 import { fetchSheetData, dataObject } from "./fetchData.js";
+import { showStudentCard, showTutorCard } from "./cardTemplates.js";
 
 const cardContainerElement = document.getElementById('card-container');
 const timezoneElement = document.getElementById('timezone-filter');
 const typeElement = document.getElementById('type-filter');
 const availabilityElement = document.getElementById('available-filter');
-
-function showTutorCard(name, type, availability, timezone) {
-  return `
-        <div class="card card--primary">
-            <header class="card__header">
-              <h3>${name}</h3>
-            </header>
-            <div class="card__body">
-              <div class="list list--primary">
-                <li class="list__item">A ${type} ready to help</li>
-                <li class="list__item">${availability}</li>
-                <li class="list__item">${timezone}</li>
-              </div>
-              <input type="submit" value="Pair" class="btn btn--primary" />
-            </div>
-        </div>`;
-}
-
-function showStudentCard(name, type, availability, timezone) {
-  return `
-        <div class="card card--secondary">
-            <header class="card__header">
-              <h3>${name}</h3>
-            </header>
-            <div class="card__body">
-              <div class="list list--primary">
-                <li class="list__item">A ${type} ready to help</li>
-                <li class="list__item">${availability}</li>
-                <li class="list__item">${timezone}</li>
-              </div>
-              <input type="submit" value="Pair" class="btn btn--secondary" />
-            </div>
-        </div>`;
-}
 
 let cachedData = null;
 async function fetchDataOnce() {
@@ -57,13 +24,13 @@ async function displayCardFilter() {
       promises[i] = dataObject(i);
 
   let peopleData = await Promise.all(promises);
+  
+  let typeList = [
+    'Type', 'Student', 'Tutor'
+  ];
 
   let timezoneList = [...new Set(
     peopleData.map(person => person.timezone)
-  )];
-
-  let typeList = [...new Set(
-    peopleData.map(person => person.type)
   )];
 
   let availableList = [...new Set(
@@ -83,21 +50,24 @@ async function displayCardFilter() {
   `).join('');
 }
 
-
-
-
 async function displayCards() {
-  const dataLength = (await fetchDataOnce()).length;
+  let data = await fetchDataOnce();
+  let dataLength = data.length;
   let cardHtml = '';
 
+  if (promises.length === 0)
+    for (let i = 0; i < dataLength; i++)
+      promises[i] = dataObject(i);
+
+  let peopleData = await Promise.all(promises);
   for (let i = 0; i < dataLength; i++) {
-    let person = await dataObject(i);
-    const { name, type, availability, timezone } = person;
-    
+    let person = peopleData[i];
+    let { name, type, availability, timezone } = person;
+
     if (type == 'Student')
       cardHtml += showStudentCard(name, type, availability, timezone);
 
-    if (type == 'Tutor')
+    if (type == 'Tutor' )
       cardHtml += showTutorCard(name, type, availability, timezone);
   }
 
