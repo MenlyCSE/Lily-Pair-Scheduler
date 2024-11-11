@@ -37,6 +37,9 @@ function showStudentCard(name, type, availability, timezone) {
 function showFillCards() {
   return `
       <div class="card card--primary card-fill">
+        <header class="card__header">
+          <h3>Unavailable</h3>
+        </header>
         <div class="card__body"></div>
       </div>`;
 }

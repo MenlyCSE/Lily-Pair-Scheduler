@@ -116,8 +116,9 @@ async function filterDisplayCards() {
   });
 
   let emptySpaceHtml = '';
-  if (filteredData.length < 1) {
-    for (let i = filteredData.length; i < 3; i++)
+  let minCards = 1;
+  if (filteredData.length < minCards) {
+    for (let i = filteredData.length; i < minCards; i++)
       emptySpaceHtml += showFillCards();
   }
 
