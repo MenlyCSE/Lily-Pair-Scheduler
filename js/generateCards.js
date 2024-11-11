@@ -130,16 +130,17 @@ async function filterDisplayCards() {
   cardContainerElement.innerHTML = cardHtml;
 }
 
-timezoneElement.addEventListener('change', () => filterDisplayCards());
-typeElement.addEventListener('change', () => filterDisplayCards());
-availabilityElement.addEventListener('change', () => filterDisplayCards());
-
-clearFilterBtn.addEventListener('click', () => {
+function resetFilters() {
   timezoneElement.value = '';
   typeElement.value = '';
   availabilityElement.value = '';
   
   displayCards();
-});
+}
+
+timezoneElement.addEventListener('change', () => filterDisplayCards());
+typeElement.addEventListener('change', () => filterDisplayCards());
+availabilityElement.addEventListener('change', () => filterDisplayCards());
+clearFilterBtn.addEventListener('click', () => resetFilters());
 
 export { displayCardFilter, displayCards };
