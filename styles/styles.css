@@ -438,6 +438,10 @@ p {
   padding: 6rem;
 }
 
+.card-fill .card__header {
+  background: var(--color-blue-dark);
+}
+
 @keyframes loadingCard {
   from {
     background-color: var(--color-blue-normal);
