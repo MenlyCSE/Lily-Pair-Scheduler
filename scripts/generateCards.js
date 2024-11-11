@@ -150,7 +150,7 @@ function resetFilters() {
   timezoneElement.value = '';
   typeElement.value = '';
   availabilityElement.value = '';
-  
+
   displayCards();
 }
 

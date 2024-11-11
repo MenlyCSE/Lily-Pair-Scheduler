@@ -54,7 +54,7 @@ function showLoadingCards() {
         <div class="card__body"></div>
       </div>`;
   }
-  
+
   cardContainer.innerHTML = cardHtml;
 }
 
