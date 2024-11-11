@@ -38,7 +38,8 @@ function showFillCards() {
   return `
       <div class="card card--primary card-fill">
         <header class="card__header">
-          <h3>No matches •́︿•̀</h3>
+          <h3>No matches</h3>
+          <h3>•︵•</h3>
         </header>
         <div class="card__body"></div>
       </div>`;
