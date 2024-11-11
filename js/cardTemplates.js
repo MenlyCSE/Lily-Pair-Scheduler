@@ -34,12 +34,19 @@ function showStudentCard(name, type, availability, timezone) {
       </div>`;
 }
 
+function showFillCards() {
+  return `
+      <div class="card card--primary card-fill">
+        <div class="card__body"></div>
+      </div>`;
+}
+
 function showLoadingCards() {
   let amount = 8;
   let cardHtml = '';
   for (let i = 0; i < amount; i++) {
     cardHtml += `
-      <div class="card card--primary card--loading">
+      <div class="card card--primary card-loading">
         <header class="card__header"></header>
         <div class="card__body"></div>
       </div>`;
@@ -48,4 +55,4 @@ function showLoadingCards() {
   cardContainer.innerHTML = cardHtml;
 }
 
-export { showTutorCard, showStudentCard, showLoadingCards };
+export { showTutorCard, showStudentCard, showLoadingCards, showFillCards };

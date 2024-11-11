@@ -428,12 +428,12 @@ p {
   background: var(--color-accent);
 }
 
-.card--loading {
+.card-loading, .card-fill {
   background: var(--color-white);
   min-height: 35rem;
 }
 
-.card--loading .card__header {
+.card-loading .card__header {
   animation: loadingCard 1.5s ease-in-out infinite alternate;
   padding: 6rem;
 }

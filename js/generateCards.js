@@ -1,5 +1,5 @@
 import { fetchSheetData, dataObject } from "./fetchData.js";
-import { showStudentCard, showTutorCard } from "./cardTemplates.js";
+import { showFillCards, showStudentCard, showTutorCard } from "./cardTemplates.js";
 
 const cardContainerElement = document.getElementById('card-container');
 const timezoneElement = document.getElementById('timezone-filter');
@@ -115,6 +115,12 @@ async function filterDisplayCards() {
     return matchTimezone && matchType && matchAvailability;
   });
 
+  let emptySpaceHtml = '';
+  if (filteredData.length < 1) {
+    for (let i = filteredData.length; i < 3; i++)
+      emptySpaceHtml += showFillCards();
+  }
+
   let cardHtml = '';
   for (let i = 0; i < filteredData.length; i++) {
     let person = filteredData[i];
@@ -128,6 +134,7 @@ async function filterDisplayCards() {
   }
 
   cardContainerElement.innerHTML = cardHtml;
+  cardContainerElement.innerHTML += emptySpaceHtml;
 }
 
 function resetFilters() {
