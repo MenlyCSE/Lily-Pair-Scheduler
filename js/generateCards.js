@@ -15,6 +15,15 @@ async function fetchDataOnce() {
   return cachedData;
 }
 
+let emptySpaceHtml = '';
+function isDatabaseEmpty(data) {
+  let minCards = 1;
+  if (data.length < minCards) {
+    for (let i = data.length; i < minCards; i++)
+      emptySpaceHtml = showFillCards();
+  }
+}
+
 let promises = [];
 async function displayCardFilter() {
   let data = await fetchDataOnce();
@@ -63,6 +72,8 @@ async function displayCards() {
   let dataLength = data.length;
   let cardHtml = '';
 
+  isDatabaseEmpty(data);
+
   if (promises.length === 0) {
     for (let i = 0; i < dataLength; i++)
       promises[i] = dataObject(i);
@@ -82,6 +93,7 @@ async function displayCards() {
   }
 
   cardContainerElement.innerHTML = cardHtml;
+  cardContainerElement.innerHTML += emptySpaceHtml;
 }
 
 async function filterDisplayCards() {
@@ -115,12 +127,7 @@ async function filterDisplayCards() {
     return matchTimezone && matchType && matchAvailability;
   });
 
-  let emptySpaceHtml = '';
-  let minCards = 1;
-  if (filteredData.length < minCards) {
-    for (let i = filteredData.length; i < minCards; i++)
-      emptySpaceHtml += showFillCards();
-  }
+  isDatabaseEmpty(filteredData);
 
   let cardHtml = '';
   for (let i = 0; i < filteredData.length; i++) {
