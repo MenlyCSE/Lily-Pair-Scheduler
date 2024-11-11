@@ -25,7 +25,7 @@ function showStudentCard(name, type, availability, timezone) {
           </header>
           <div class="card__body">
             <div class="list list--primary">
-              <li class="list__item">A ${type} ready to help</li>
+              <li class="list__item">A ${type} looking for help</li>
               <li class="list__item">${availability}</li>
               <li class="list__item">${timezone}</li>
             </div>
