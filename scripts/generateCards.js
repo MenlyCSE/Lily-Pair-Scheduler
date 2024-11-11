@@ -73,6 +73,7 @@ async function displayCards() {
   let cardHtml = '';
 
   isDatabaseEmpty(data);
+  cardContainerElement.innerHTML += emptySpaceHtml;
 
   if (promises.length === 0) {
     for (let i = 0; i < dataLength; i++)
@@ -93,7 +94,6 @@ async function displayCards() {
   }
 
   cardContainerElement.innerHTML = cardHtml;
-  cardContainerElement.innerHTML += emptySpaceHtml;
 }
 
 async function filterDisplayCards() {
@@ -102,6 +102,7 @@ async function filterDisplayCards() {
   let selectedTimezone = timezoneElement.value;
   let selectedType = typeElement.value;
   let selectedAvailability = availabilityElement.value;
+  emptySpaceHtml = '';
 
   if (promises.length === 0) {
     for (let i = 0; i < dataLength; i++)
