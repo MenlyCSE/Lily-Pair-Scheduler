@@ -17,11 +17,8 @@ async function fetchDataOnce() {
 
 let emptySpaceHtml = '';
 function isDatabaseEmpty(data) {
-  let minCards = 1;
-  if (data.length < minCards) {
-    for (let i = data.length; i < minCards; i++)
-      emptySpaceHtml = showFillCards();
-  }
+  if (!data.length)
+    emptySpaceHtml = showFillCards();
 }
 
 let promises = [];

@@ -46,7 +46,7 @@ function showFillCards() {
 }
 
 function showLoadingCards() {
-  let amount = 8;
+  let amount = 9;
   let cardHtml = '';
   for (let i = 0; i < amount; i++) {
     cardHtml += `
