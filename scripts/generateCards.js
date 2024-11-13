@@ -96,12 +96,28 @@ async function displayCards() {
   cardContainerElement.innerHTML = cardHtml;
 }
 
-async function filterDisplayCards() {
-  let data = await fetchDataOnce();
-  let dataLength = data.length;
+function returnFilteredData(peopleData) {
   let selectedTimezone = timezoneElement.value;
   let selectedType = typeElement.value;
   let selectedAvailability = availabilityElement.value;
+  
+  let filteredData = [];
+  for (let i = 0; i < peopleData.length; i++) {
+    let person = peopleData[i];
+    let matchTimezone = !selectedTimezone || person.timezone === selectedTimezone;
+    let matchType = !selectedType || person.type === selectedType;
+    let matchAvailability = !selectedAvailability || person.availability === selectedAvailability;
+    
+    if (matchTimezone && matchType && matchAvailability) {
+      filteredData.push(person);
+    }
+  }
+  return filteredData;
+}
+
+async function filterDisplayCards() {
+  let data = await fetchDataOnce();
+  let dataLength = data.length;
   emptySpaceHtml = '';
 
   if (promises.length === 0) {
@@ -110,24 +126,9 @@ async function filterDisplayCards() {
   }
 
   let peopleData = await Promise.all(promises);
+  let filteredData = returnFilteredData(peopleData);
 
-  let filteredData = peopleData.filter(person => {
-    let matchTimezone = true;
-    let matchType = true;
-    let matchAvailability = true;
-
-    if (selectedTimezone && (person.timezone !== selectedTimezone))
-      matchTimezone = false;
-
-    if (selectedType && (person.type !== selectedType))
-      matchType = false;
-
-    if (selectedAvailability && (person.availability !== selectedAvailability))
-      matchAvailability = false;
-
-    return matchTimezone && matchType && matchAvailability;
-  });
-
+  returnFilteredData(peopleData);
   isDatabaseEmpty(filteredData);
 
   let cardHtml = '';
