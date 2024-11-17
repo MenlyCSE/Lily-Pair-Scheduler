@@ -18,15 +18,15 @@
         </ul>
       </nav>
     </header>
-    <section class="block block--skewed">
-      <div class="block__heading">
-        <h1>Let us do the work</h1>
+    <section class="block block--skewed" id="formBlock">
+      <div class="block__heading" id="formTitle">
+        <h1>Let us help</h1>
         <p>
-          Simply enter the necessary information below and let our algorithm
-          handle the rest
+          Please enter the necessary information below 
+          to join our database
         </p>
       </div>
-      <form action="POST" class="form">
+      <form action="POST" class="form" id="formElement">
         <fieldset class="block">
           <label for="name" class="label label--primary required">Name</label>
           <input name="name" id="name" placeholder="Ex. John" class="input input--primary" required />
@@ -56,7 +56,7 @@
           <select class="select-menu select-menu--primary input label--secondary" id="select-menu">
             <option value="" selected disabled>Timezones</option>
           </select>
-          <input type="submit" value="Send" class="btn btn--primary" />
+          <input type="submit" value="Send" class="btn btn--primary" id="formSubmitBtn"/>
         </fieldset>
       </form>
     </section>

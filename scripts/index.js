@@ -1,3 +1,4 @@
+import { submitBtnListener } from "./submitForm.js";
 import { showLoadingCards } from "./cardTemplates.js";
 import { displayCardFilter, displayCards } from "./generateCards.js";
 import {
@@ -7,6 +8,7 @@ import {
 } from "./generateMenus.js";
 
 async function initialize() {
+    submitBtnListener();
     showLoadingCards();
     displayCards();
     displayCardFilter();
