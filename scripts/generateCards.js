@@ -97,14 +97,14 @@ function returnFilteredData(peopleData) {
   let selectedTimezone = timezoneElement.value;
   let selectedType = typeElement.value;
   let selectedAvailability = availabilityElement.value;
-  
+
   let filteredData = [];
   for (let i = 0; i < peopleData.length; i++) {
     let person = peopleData[i];
     let matchTimezone = !selectedTimezone || person.timezone === selectedTimezone;
     let matchType = !selectedType || person.type === selectedType;
     let matchAvailability = !selectedAvailability || person.availability === selectedAvailability;
-    
+
     if (matchTimezone && matchType && matchAvailability) {
       filteredData.push(person);
     }
