@@ -87,15 +87,19 @@ nav {
   background: var(--color-blue-darker);
   display: flex;
   flex-direction: row;
-  justify-content: flex-end;
+  padding: 0 2rem;
 }
 
 nav ul {
   display: flex;
   list-style-type: none;
-  margin-right: 1.5rem;
   margin: 0;
   padding: 0;
+  margin-left: auto;
+}
+
+.nav__icon {
+  width: 67px;
 }
 
 nav li {
