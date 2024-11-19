@@ -5,9 +5,11 @@ const formTitle = document.getElementById('formTitle');
 
 function submitBtnListener() {
     submitBtn.addEventListener('click', () => {
-        formBlock.classList.add('block__submitted');
-        formElement.remove();
-        formTitle.innerHTML = `<h1>Submission sucessful</h1>`;
+        if (formElement.checkValidity()) {
+            formBlock.classList.add('block__submitted');
+            formElement.remove();
+            formTitle.innerHTML = `<h1>Submission sucessful</h1>`;
+        }
     });
 }
 
