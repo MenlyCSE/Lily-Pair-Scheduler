@@ -122,6 +122,7 @@ nav a:hover {
 @media screen and (max-width: 768px) {
   nav {
     flex-direction: column;
+    background: var(--color-blue-darker);
   }
 
   nav ul {
