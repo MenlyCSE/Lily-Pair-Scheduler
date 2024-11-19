@@ -41,7 +41,8 @@ function displayTypeRadioMenu() {
                 type="radio" 
                 name="type" 
                 class="radiobox--primary" 
-                id="${type.toLowerCase()}" 
+                id="${type.toLowerCase()}"
+                required 
             />
             <label for="${type.toLowerCase()}" class="label label--secondary">
                 ${type}
