@@ -82,31 +82,35 @@ p {
 }
 
 /* Nav Bar */
-.nav {
+nav {
   align-items: center;
   background: var(--color-blue-darker);
   display: flex;
-  justify-content: center;
+  flex-direction: row;
+  justify-content: flex-end;
 }
 
-.nav__list {
-  margin: 1.5rem 0 1.5rem 0rem;
+nav ul {
+  display: flex;
+  list-style-type: none;
+  margin-right: 1.5rem;
+  margin: 0;
   padding: 0;
 }
 
-.nav__item {
+nav li {
   margin: 2rem;
   white-space: nowrap;
 }
 
-.nav__item a {
+nav a {
   color: var(--color-white);
   font-weight: 600;
   text-decoration: none;
   transition: var(--transition-primary);
 }
 
-.nav__item a:hover {
+nav a:hover {
   background: var(--color-accent);
   border-radius: var(--border-radius);
   padding: 0.5rem 1rem;
