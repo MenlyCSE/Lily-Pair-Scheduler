@@ -81,13 +81,13 @@ async function displayCards() {
 
   for (let i = 0; i < dataLength; i++) {
     let person = peopleData[i];
-    let { name, type, availability, timezone } = person;
+    let { name, email, type, availability, timezone } = person;
 
     if (type == 'Student')
-      cardHtml += showStudentCard(name, type, availability, timezone);
+      cardHtml += showStudentCard(name, email, type, availability, timezone);
 
     if (type == 'Tutor')
-      cardHtml += showTutorCard(name, type, availability, timezone);
+      cardHtml += showTutorCard(name, email, type, availability, timezone);
   }
 
   cardContainerElement.innerHTML = cardHtml;

@@ -1,6 +1,6 @@
 const cardContainer = document.getElementById('card-container');
 
-function showTutorCard(name, type, availability, timezone) {
+function showTutorCard(name, email, type, availability, timezone) {
   return `
       <div class="card card--primary">
           <header class="card__header">
@@ -12,12 +12,17 @@ function showTutorCard(name, type, availability, timezone) {
               <li class="list__item">${availability}</li>
               <li class="list__item">${timezone}</li>
             </div>
-            <input type="submit" value="Pair" class="btn btn--primary" />
+            <input 
+              type="submit" 
+              value="Pair" 
+              class="btn btn--primary" 
+              onclick="location.href='mailto:${email}';"
+            />
           </div>
       </div>`;
 }
 
-function showStudentCard(name, type, availability, timezone) {
+function showStudentCard(name, email, type, availability, timezone) {
   return `
       <div class="card card--secondary">
           <header class="card__header">
@@ -29,7 +34,12 @@ function showStudentCard(name, type, availability, timezone) {
               <li class="list__item">${availability}</li>
               <li class="list__item">${timezone}</li>
             </div>
-            <input type="submit" value="Pair" class="btn btn--secondary" />
+            <input 
+              type="submit" 
+              value="Pair" 
+              class="btn btn--secondary" 
+              onclick="location.href='mailto:${email}';"
+            />
           </div>
       </div>`;
 }
