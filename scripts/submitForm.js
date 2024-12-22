@@ -8,7 +8,10 @@ function submitBtnListener() {
         if (formElement.checkValidity()) {
             formBlock.classList.add('block__submitted');
             formElement.remove();
-            formTitle.innerHTML = `<h1>Submission sucessful</h1>`;
+            formTitle.innerHTML = `
+                <h1>Submission sucessful</h1>
+                <p>Our team will review your submission shortly!</p>
+            `;
         }
     });
 }
