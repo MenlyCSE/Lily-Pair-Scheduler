@@ -1,5 +1,5 @@
 # About The Project
-Lily pair is a microservice to help students gain access to mentors. [The Eon English](https://github.com/EonEnglish) is going to integerate this project using their company database.
+Lily pair is a microservice to help students gain access to mentors. In the future, [The Eon English Team](https://github.com/EonEnglish) will integrate their database and branch from this project. 
 
 ## Built With
 - ![Static Badge](https://img.shields.io/badge/JavaScript-%23212329?style=for-the-badge&logo=JavaScript)
